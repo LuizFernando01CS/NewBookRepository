@@ -1,0 +1,15 @@
+C:\Projetos\Back\IA.Api\IA.Domain\bin\Debug\net6.0\IA.Domain.deps.json
+C:\Projetos\Back\IA.Api\IA.Domain\bin\Debug\net6.0\IA.Domain.dll
+C:\Projetos\Back\IA.Api\IA.Domain\bin\Debug\net6.0\IA.Domain.pdb
+C:\Projetos\Back\IA.Api\IA.Domain\bin\Debug\net6.0\IA.Core.dll
+C:\Projetos\Back\IA.Api\IA.Domain\bin\Debug\net6.0\IA.Core.pdb
+C:\Projetos\Back\IA.Api\IA.Domain\obj\Debug\net6.0\IA.Domain.csproj.AssemblyReference.cache
+C:\Projetos\Back\IA.Api\IA.Domain\obj\Debug\net6.0\IA.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\Back\IA.Api\IA.Domain\obj\Debug\net6.0\IA.Domain.AssemblyInfoInputs.cache
+C:\Projetos\Back\IA.Api\IA.Domain\obj\Debug\net6.0\IA.Domain.AssemblyInfo.cs
+C:\Projetos\Back\IA.Api\IA.Domain\obj\Debug\net6.0\IA.Domain.csproj.CoreCompileInputs.cache
+C:\Projetos\Back\IA.Api\IA.Domain\obj\Debug\net6.0\IA.Domain.csproj.CopyComplete
+C:\Projetos\Back\IA.Api\IA.Domain\obj\Debug\net6.0\IA.Domain.dll
+C:\Projetos\Back\IA.Api\IA.Domain\obj\Debug\net6.0\refint\IA.Domain.dll
+C:\Projetos\Back\IA.Api\IA.Domain\obj\Debug\net6.0\IA.Domain.pdb
+C:\Projetos\Back\IA.Api\IA.Domain\obj\Debug\net6.0\ref\IA.Domain.dll
