@@ -1,0 +1,138 @@
+.contents{
+    height: 100vh;
+    -webkit-transition: -webkit-transform 0.8s ease;
+    transition: -webkit-transform 0.8s ease;
+    transition: transform 0.8s ease;
+    transition: transform 0.8s ease, -webkit-transform 0.8s ease;
+    
+}
+
+.contents .content {
+    background-position: center center;
+    background-size: cover;
+    background-position: fixed;
+}
+
+.slicontentsdes .content {
+    height: 100vh;
+    width: 100vw;
+    float: left;
+    text-align: center;
+    background-size: cover;
+}
+
+.slider-wrapper{
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#image-slider{
+    width: auto;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    display: block;
+}
+
+#image-slider ul{
+    margin-bottom: 0;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    margin-top: 0px;
+    margin-top: 0;
+}
+
+// #image-slider ul #Livro {
+//     background-image: url(../../../assets/NovaImagens/ComoFunciona.jpg);
+// }
+
+#image-slider ul li {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+#image-slider ul li {
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.second-content {
+    top: 180%!important;
+    transform: translateY(-180%);
+}
+
+.cont {
+    overflow-y: scroll;
+    position: relative;
+    width: 80%;
+    height: 80%;
+    left: 20%;
+    top: 10%;
+}
+
+#tabs {
+    float: right;
+    margin-right: 0px;
+}
+
+#tabs ul {
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+#tabs ul li {
+    margin-top: 5px;
+    margin-bottom: 25px;
+    display: block;
+    background-color: transparent;
+}
+
+#tabs ul li a {
+    display: block;
+    cursor: pointer;
+    outline: 0;
+    border: none;
+    color: #6a6a6a;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+#tabs ul li span {
+    text-align: center;
+    background-color: transparent;
+    border: 3px solid #fff;
+    color: #fff;
+    width: 90px;
+    height: 90px;
+    font-size: 32px;
+    line-height: 84px;
+    border-radius: 50%;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+}
+

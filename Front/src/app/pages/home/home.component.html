@@ -1,0 +1,70 @@
+
+
+<div class="slides">
+    <div id="slide1" class="slide">
+      <div class="slider-wrapper">
+        <div id="image-slider">
+          <ul>
+            <li id="Livro" class="active-img" style="left: 0px;">
+              <div class="slide-caption" id="caption1" style="opacity: 1;">
+                <h6>Novo Livro</h6>
+                <h2>Escreva <br>
+                  Seu <br>
+                  Livro</h2>
+              </div>
+              <div class="slide-caption" id="caption2" style="opacity: 0;">
+                <h6>Como Funciona</h6>
+                <h2>Criando <br>
+                  Idéias <br>
+                  Revolucionárias</h2>
+              </div>
+            </li>
+          </ul>
+          <div id="buttons-livros" style="position: absolute;">
+            <!-- <div *ngIf="slide1Ativo" id="buttons1" style="opacity: 0;">
+              <div style="width: 500px; height: 500px; background-color: white;">
+                  <div>
+                    <h2>NewBook IA</h2>
+                    <p style="color: black; text-align: justify;">New book IA é um sistema onde "tal nome", nossa IA, irá ajuda-lo
+                      a criar <br>e montar idéias para a criação de seu livro/roteiro.
+                      Além das praticidades e facilidades que a "tal nome" irá conceder
+                      para a criação de seu livro. No sistema poderá ter varias maneiras
+                      de produzir seu livro/roteiro, como por fala, arquivo de audio, arquivo
+                      Word, PDF e a tradicional escrita. Também o sistema foi criado para
+                      pode usa-lo em nosso aplicativo, com as mesmas funcionalidades e
+                      praticidades, algo pensado para caso não queira perder a oportunidade
+                      de escrever suas ideias longe do computador.</p>
+                  </div>
+
+              </div>      
+            </div> -->
+  
+            <div *ngIf="slide2Ativo" id="buttons2" style="opacity: 0;">
+              <div class="buttonLivro button1" (click)="ComoFuncionaPage()">
+                <h5>Como Funciona</h5>
+              </div>   
+              <div class="buttonLivro button2">
+                <h5>TESTE2</h5>
+              </div>
+              <div class="buttonLivro button3">
+                <h5>TESTE3</h5>
+              </div>
+            </div>
+  
+          </div>
+  
+          <div id="thumbnail">
+            <ul>
+              <li id="li1" class="active ativo" title="Novo Livro" (click)="slide(1)">
+               <img src="../../../assets/NovaImagens/livro.jpg">
+              </li>
+              <li id="li2"  class="MeusLivros" (click)="slide(2)">
+                <img src="../../../assets/NovaImagens/lampada.jpg">
+              </li>
+              <li id="li3" class="Outros" (click)="slide(3)">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,251 @@
+.slides{
+    /* width: 500vw; */
+    height: 100vh;
+    -webkit-transition: -webkit-transform 0.8s ease;
+    transition: -webkit-transform 0.8s ease;
+    transition: transform 0.8s ease;
+    transition: transform 0.8s ease, -webkit-transform 0.8s ease;
+    background-color: black;
+    top: 0px;
+    position: fixed;
+    left: 0px;
+}
+.slides .slide {
+    background-position: center center;
+    background-size: cover;
+    background-position: fixed;
+}
+.slides .slide {
+    height: 100vh;
+    width: 100vw;
+    float: left;
+    text-align: center;
+    background-size: cover;
+}
+.slider-wrapper{
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#image-slider{
+    width: auto;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    display: block;
+}
+#image-slider ul{
+    margin-bottom: 0;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    margin-top: 0px;
+    margin-top: 0;
+}
+
+
+#image-slider ul #Livro {
+    background-image: url(../../../assets/NovaImagens/livro.jpg);
+}
+// #image-slider ul #comoFunciona{
+//     background-image: url(../../../assets/NovaImagens/lampada.jpg);
+// }
+// #image-slider ul li:nth-child(3) {
+//     background-image: url(../../../assets/images/full-bg-03.jpg);
+// }
+#image-slider ul li {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+}
+#image-slider ul li {
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.slide-caption {
+    text-align: right;
+    right: 60px;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+}
+.slide-caption h6 {
+    margin-top: 0px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+}
+.slide-caption h2 {
+    margin-top: 0px;
+    font-size: 60px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #fff;
+}
+
+h5{
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #fff;
+}
+
+.buttonLivro{
+    box-sizing: border-box;
+    padding: 5px;
+    margin: 1rem;
+    background: rgba(0, 0, 0, 0.50);
+    width: 140px;
+}
+
+.buttonLivro:hover{
+    background: rgba(0, 0, 0, 0.80);
+    cursor: pointer;
+}
+
+#buttons-livros {
+    position: absolute;
+    z-index: 99999;
+    left: 300px;
+    top: 250px;
+    height: 100px !important;
+
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+    /* width: 100%; */
+}
+
+#thumbnail {
+    position: absolute;
+    z-index: 99999;
+    right: 500px;
+    top: 700px;
+    width: 100%;
+    height: 200px !important;
+    // -webkit-animation: fadein 0.5s linear 1 normal forwards;
+}
+// #thumbnail:hover{
+//     -webkit-animation: fadeout 0.5s linear 1 normal forwards;
+// }
+
+// @-webkit-keyframes desativado{
+//     from { opacity: 1; }
+//     to { opacity: 0; }
+// }
+
+// @-webkit-keyframes ativo{
+//     from { opacity: 0; }
+//     to { opacity: 1; }
+// }
+
+// @-webkit-keyframes fadein{
+//     from { opacity: 1; }
+//     to { opacity: 0.5; }
+// }
+
+// @-webkit-keyframes fadeout{
+//     from { opacity: 0.5; }
+//     to { opacity: 1; }
+// }
+
+@media screen and (max-width: 1600px){
+    #thumbnail {
+        top: 550px;
+    }
+}
+
+#thumbnail ul {
+    padding: 0px;
+    margin: 0px;
+    margin-top: 0;
+    margin-right: 50px;
+    height: 200px;
+}
+#thumbnail ul li.active {
+    border: 5px solid #faf5b2;
+}
+#thumbnail ul li {
+    display: inline-block;
+    max-width: 120px;
+    max-height: 120px;
+    margin-right: 0px;
+    cursor: pointer;
+    border: 4px solid transparent;
+    transition: all 0.5s;
+}
+#thumbnail ul li img {
+    max-width: 100%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#thumbnail ul .MeusLivros {
+    margin-left: 150px;
+}
+
+#thumbnail ul .Outros {
+    margin-left: 300px;
+}
+
+@media screen and (max-width: 1000px){
+    #thumbnail ul .MeusLivros {
+        max-width: 80px;
+        max-height: 80px;
+        margin-left: 295px;
+    }
+    #thumbnail ul .Outros {
+        max-width: 80px;
+        max-height: 80px;
+        margin-left: 400px;
+    }
+    #thumbnail ul .ativo {
+        max-width: 80px;
+        max-height: 80px;
+        margin-left: 185px;
+    }
+
+    .slide-caption h2 {
+        font-size: 48px;
+    }
+    .slide-caption {
+        padding-left: 30px;
+    }
+    #buttons-livros{
+        position: fixed;
+        z-index: 100;
+        inline-size: min-content;
+        top: 200px;
+        left: 0px !important;
+    }
+
+}
+@media screen and (max-width: 375px){
+    .slide-caption h2 {
+        font-size: 35px;
+    }
+    
+    .buttonLivro{
+        width: 70px !important;
+        height: 70px !important;
+    }
+}
+
+@media screen and (max-width: 1600px){
+    #buttons-livros{
+        left: 150px;
+    }
+    .buttonLivro{
+        text-align: center;
+        width: 100px;
+    }
+}
