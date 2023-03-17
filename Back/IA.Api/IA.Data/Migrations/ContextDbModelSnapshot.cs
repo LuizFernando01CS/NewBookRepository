@@ -34,7 +34,7 @@ namespace IA.Data.Migrations
                     b.Property<ulong>("PeloSite")
                         .HasColumnType("bit");
 
-                    b.Property<int>("UsuarioId")
+                    b.Property<int?>("UsuarioId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -44,6 +44,34 @@ namespace IA.Data.Migrations
                     b.ToTable("ChatIA");
                 });
 
+            modelBuilder.Entity("IA.Domain.Entities.ChaveValor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Chave")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<DateTime>("DataAtualizacao")
+                        .HasColumnType("datetime");
+
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("datetime");
+
+                    b.Property<ulong>("PeloSite")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Valor")
+                        .IsRequired()
+                        .HasColumnType("varchar(500)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ChaveValor");
+                });
+
             modelBuilder.Entity("IA.Domain.Entities.Endereco", b =>
                 {
                     b.Property<int>("Id")
@@ -51,15 +79,12 @@ namespace IA.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Bairro")
-                        .IsRequired()
                         .HasColumnType("varchar(150)");
 
                     b.Property<string>("Cidade")
-                        .IsRequired()
                         .HasColumnType("varchar(50)");
 
                     b.Property<string>("Complemento")
-                        .IsRequired()
                         .HasColumnType("varchar(150)");
 
                     b.Property<DateTime>("DataAtualizacao")
@@ -69,21 +94,18 @@ namespace IA.Data.Migrations
                         .HasColumnType("datetime");
 
                     b.Property<string>("Estado")
-                        .IsRequired()
                         .HasColumnType("varchar(50)");
 
                     b.Property<int>("NumeroCasa")
                         .HasColumnType("int");
 
                     b.Property<string>("Pais")
-                        .IsRequired()
                         .HasColumnType("varchar(50)");
 
                     b.Property<ulong>("PeloSite")
                         .HasColumnType("bit");
 
                     b.Property<string>("Rua")
-                        .IsRequired()
                         .HasColumnType("varchar(150)");
 
                     b.HasKey("Id");
@@ -106,13 +128,13 @@ namespace IA.Data.Migrations
                     b.Property<int>("FrequenciaEscrita")
                         .HasColumnType("int");
 
-                    b.Property<int>("GostosLivroExistenteId")
+                    b.Property<int?>("GostosLivroExistenteId")
                         .HasColumnType("int");
 
                     b.Property<ulong>("JaEscreveu")
                         .HasColumnType("bit");
 
-                    b.Property<int>("LidosLivrosExistenteId")
+                    b.Property<int?>("LidosLivrosExistenteId")
                         .HasColumnType("int");
 
                     b.Property<ulong>("LivrosCriados")
@@ -133,11 +155,9 @@ namespace IA.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("CNPJ")
-                        .IsRequired()
                         .HasColumnType("varchar(20)");
 
                     b.Property<string>("CPF")
-                        .IsRequired()
                         .HasColumnType("varchar(20)");
 
                     b.Property<DateTime>("DataAtualizacao")
@@ -146,21 +166,19 @@ namespace IA.Data.Migrations
                     b.Property<DateTime>("DataCriacao")
                         .HasColumnType("datetime");
 
-                    b.Property<int>("EnderecoId")
+                    b.Property<int?>("EnderecoId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Idade")
                         .HasColumnType("datetime");
 
-                    b.Property<int>("InformacoesAdicionaisId")
+                    b.Property<int?>("InformacoesAdicionaisId")
                         .HasColumnType("int");
 
                     b.Property<string>("NomeAbreviado")
-                        .IsRequired()
                         .HasColumnType("varchar(50)");
 
                     b.Property<string>("NomeCompleto")
-                        .IsRequired()
                         .HasColumnType("varchar(50)");
 
                     b.Property<int>("NumeroTelefone1")
@@ -181,6 +199,42 @@ namespace IA.Data.Migrations
                     b.ToTable("InformacoesPessoais");
                 });
 
+            modelBuilder.Entity("IA.Domain.Entities.Livro", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DataAtualizacao")
+                        .HasColumnType("datetime");
+
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("LivroCompleto")
+                        .IsRequired()
+                        .HasColumnType("varchar(2000)");
+
+                    b.Property<ulong>("PeloSite")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Resumo")
+                        .HasColumnType("varchar(1000)");
+
+                    b.Property<string>("Sumario")
+                        .HasColumnType("varchar(1000)");
+
+                    b.Property<int?>("TipoLivroId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Livro");
+                });
+
             modelBuilder.Entity("IA.Domain.Entities.LivrosExistentes", b =>
                 {
                     b.Property<int>("Id")
@@ -194,22 +248,18 @@ namespace IA.Data.Migrations
                         .HasColumnType("datetime");
 
                     b.Property<string>("Genero")
-                        .IsRequired()
                         .HasColumnType("varchar(50)");
 
                     b.Property<string>("NomeLivroCompleto")
-                        .IsRequired()
                         .HasColumnType("varchar(100)");
 
                     b.Property<ulong>("PeloSite")
                         .HasColumnType("bit");
 
                     b.Property<string>("Resumo")
-                        .IsRequired()
                         .HasColumnType("varchar(1000)");
 
                     b.Property<string>("Sumario")
-                        .IsRequired()
                         .HasColumnType("varchar(1000)");
 
                     b.HasKey("Id");
@@ -223,7 +273,7 @@ namespace IA.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("ChatIAId")
+                    b.Property<int?>("ChatIAId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DataAtualizacao")
@@ -233,7 +283,6 @@ namespace IA.Data.Migrations
                         .HasColumnType("datetime");
 
                     b.Property<string>("Mensagem")
-                        .IsRequired()
                         .HasColumnType("varchar(1000)");
 
                     b.Property<int>("Ordem")
@@ -265,10 +314,9 @@ namespace IA.Data.Migrations
                         .HasColumnType("datetime");
 
                     b.Property<string>("MensagemRecebida")
-                        .IsRequired()
                         .HasColumnType("varchar(1000)");
 
-                    b.Property<int>("MensagensId")
+                    b.Property<int?>("MensagensId")
                         .HasColumnType("int");
 
                     b.Property<ulong>("PeloSite")
@@ -290,6 +338,9 @@ namespace IA.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<ulong>("CreateAuthGoogle")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("DataAtualizacao")
                         .HasColumnType("datetime");
 
@@ -300,11 +351,20 @@ namespace IA.Data.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(50)");
 
-                    b.Property<int>("InformacoesPessoaisID")
+                    b.Property<string>("FirebaseId")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("Imagem")
+                        .HasColumnType("varchar(1000)");
+
+                    b.Property<int?>("InformacoesPessoaisID")
                         .HasColumnType("int");
 
                     b.Property<string>("Login")
                         .IsRequired()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("MetodoAcesso")
                         .HasColumnType("varchar(50)");
 
                     b.Property<string>("Password")
@@ -313,6 +373,12 @@ namespace IA.Data.Migrations
 
                     b.Property<ulong>("PeloSite")
                         .HasColumnType("bit");
+
+                    b.Property<string>("ProvedorId")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime>("UltimoAcesso")
+                        .HasColumnType("datetime");
 
                     b.HasKey("Id");
 

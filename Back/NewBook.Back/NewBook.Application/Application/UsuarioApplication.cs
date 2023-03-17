@@ -1,10 +1,6 @@
 ﻿using NewBook.Application.Interface.Application;
 using NewBook.Domain.Entities;
 using NewBook.Domain.Interfaces.Services;
-using NewBook.Domain.Request;
-using NewBook.Domain.Response;
-using System.Text;
-using System.Text.Json;
 
 namespace NewBook.Application.Application
 {
@@ -17,27 +13,19 @@ namespace NewBook.Application.Application
             _usuarioService = usuarioService;
         }
 
-        public ResponseLogin Logar(RequestLogin login)
+        public async Task<Usuario> ObterPeloIdFireBase(string idFirebase)
         {
-
-            var KeyApiAuth = System.Configuration.ConfigurationManager.AppSettings["KeyApiAuth"];
-
-            var url = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCAZLfSEP2m8BDMTxtzNSLaMsmkLbToxAg";
-
-            var data = new System.Net.Http.StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(login), Encoding.UTF8, "application/json");
-
-            using var client = new HttpClient();
-
-            var response = client.PostAsync(url, data).Result;
-
-            string resultJson = response.Content.ReadAsStringAsync().Result;
-
-            return JsonSerializer.Deserialize<ResponseLogin>(resultJson ?? "");
+            return await _usuarioService.ObterPeloIdFireBase(idFirebase);
         }
 
-        public void CriarConta(RequestCriarConta requestCriarConta)
+        public async Task<Usuario> ObterPeloEmail(string email)
         {
+            return await _usuarioService.ObterPeloEmail(email);
+        }
 
+        public async Task<Usuario> ObterPeloEmailESenha(string email, string senha)
+        {
+            return await _usuarioService.ObterPeloEmailESenha(email, senha);
         }
     }
 }

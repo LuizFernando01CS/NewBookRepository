@@ -7,7 +7,7 @@ namespace NewBook.Domain.Entities
         public string Mensagem { get; set; }
         public TipoMensagemEnum TipoMensagem { get; set; }
         public int Ordem { get; set; }
-        public int ChatIAId { get; set; }
+        public int? ChatIAId { get; set; }
 
 
         public ChatIA ChatIA { get; set; }

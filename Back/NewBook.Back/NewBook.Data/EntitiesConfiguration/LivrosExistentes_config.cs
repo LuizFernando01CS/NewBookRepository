@@ -16,10 +16,10 @@ namespace NewBook.Data.EntitiesConfiguration
             builder.Property(p => p.PeloSite).IsRequired(true).HasColumnType("bit");
 
             //table
-            builder.Property(p => p.Resumo).IsRequired(true).HasColumnType("varchar(1000)");
-            builder.Property(p => p.Sumario).IsRequired(true).HasColumnType("varchar(1000)");
-            builder.Property(p => p.NomeLivroCompleto).IsRequired(true).HasColumnType("varchar(100)");
-            builder.Property(p => p.Genero).IsRequired(true).HasColumnType("varchar(50)");
+            builder.Property(p => p.Resumo).IsRequired(false).HasColumnType("varchar(1000)");
+            builder.Property(p => p.Sumario).IsRequired(false).HasColumnType("varchar(1000)");
+            builder.Property(p => p.NomeLivroCompleto).IsRequired(false).HasColumnType("varchar(100)");
+            builder.Property(p => p.Genero).IsRequired(false).HasColumnType("varchar(50)");
 
             //relationship
         }

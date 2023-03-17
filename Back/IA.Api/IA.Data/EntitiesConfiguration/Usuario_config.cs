@@ -19,7 +19,13 @@ namespace IA.Data.EntitiesConfiguration
             builder.Property(p => p.Login).IsRequired(true).HasColumnType("varchar(50)");
             builder.Property(p => p.Email).IsRequired(true).HasColumnType("varchar(50)");
             builder.Property(p => p.Password).IsRequired(true).HasColumnType("varchar(50)");
-            builder.Property(p => p.InformacoesPessoaisID).IsRequired(true).HasColumnType("int");
+            builder.Property(p => p.InformacoesPessoaisID).IsRequired(false).HasColumnType("int");
+            builder.Property(p => p.FirebaseId).IsRequired(false).HasColumnType("varchar(50)");
+            builder.Property(p => p.CreateAuthGoogle).IsRequired(true).HasColumnType("bit");
+            builder.Property(p => p.Imagem).IsRequired(false).HasColumnType("varchar(1000)");
+            builder.Property(p => p.UltimoAcesso).IsRequired(true).HasColumnType("datetime");
+            builder.Property(p => p.ProvedorId).IsRequired(false).HasColumnType("varchar(50)");
+            builder.Property(p => p.MetodoAcesso).IsRequired(false).HasColumnType("varchar(50)");
 
             //relationship
             builder.HasOne(x => x.InformacoesPessoais).WithMany(x => x.Usuario).HasForeignKey(x => x.InformacoesPessoaisID);

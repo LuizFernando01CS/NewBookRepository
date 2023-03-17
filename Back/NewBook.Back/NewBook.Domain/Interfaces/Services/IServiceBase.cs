@@ -1,4 +1,6 @@
-﻿namespace NewBook.Domain.Interfaces.Services
+﻿using NewBook.Domain.Entities;
+
+namespace NewBook.Domain.Interfaces.Services
 {
     public interface IServiceBase<T> where T : class
     {
@@ -9,7 +11,9 @@
 
         void Update(T entity);
 
-        string Add(T entity);
+        Task UpdateAsync(T entity);
+
+        int Add(T entity);
 
         bool AddRange(List<T> entity);
 
@@ -19,8 +23,9 @@
 
         void Dispose();
 
-        Task<string> AddAsync(T entity);
+        Task<int> AddAsync(T entity);
 
         Task<bool> AddRangeAsync(List<T> entity);
+        Task<ChaveValor> ObterChaveValor(string chave);
     }
 }

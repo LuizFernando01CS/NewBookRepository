@@ -1,11 +1,11 @@
 ﻿using NewBook.Domain.Entities;
-using NewBook.Domain.Request;
-using NewBook.Domain.Response;
 
 namespace NewBook.Application.Interface.Application
 {
     public interface IUsuarioApplication : IApplicationBase<Usuario>
     {
-        ResponseLogin Logar(RequestLogin login);
+        Task<Usuario> ObterPeloIdFireBase(string idFirebase);
+        Task<Usuario> ObterPeloEmail(string email);
+        Task<Usuario> ObterPeloEmailESenha(string email, string senha);
     }
 }

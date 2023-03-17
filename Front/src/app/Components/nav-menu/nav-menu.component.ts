@@ -13,7 +13,7 @@ export class NavMenuComponent {
 
   }
   ngOnInit() {
-     this.scriptService.ativarNavBar()
+     this.scriptService.ativarSideBar()
   }
 
   RotaInicio(){

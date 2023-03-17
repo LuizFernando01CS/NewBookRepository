@@ -1,4 +1,6 @@
-﻿namespace NewBook.Application.Interface.Application
+﻿using NewBook.Domain.Entities;
+
+namespace NewBook.Application.Interface.Application
 {
     public interface IApplicationBase<T> where T : class
     {
@@ -10,7 +12,9 @@
 
         void Update(T entity);
 
-        string Add(T entity);
+        Task UpdateAsync(T entity);
+
+        int Add(T entity);
 
         bool AddRange(List<T> entity);
 
@@ -19,8 +23,9 @@
         bool DeleteRange(List<T> entity);
 
         void Dispose();
-        Task<string> AddAsync(T entity);
+        Task<int> AddAsync(T entity);
 
         Task<bool> AddRangeAsync(List<T> entity);
+        Task<ChaveValor> ObterChaveValor(string chave);
     }
 }

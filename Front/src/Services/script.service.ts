@@ -6,7 +6,7 @@ export class ScriptService {
     constructor() {
      }
 
-    public ativarNavBar()
+    public ativarSideBar()
     {
        document.addEventListener("mousemove", function(event) {
         var x = event.clientX;
@@ -117,4 +117,22 @@ export class ScriptService {
      }); 
     }
 
+
+    public ativarNavBar()
+    {
+       document.addEventListener("mousemove", function(event) {
+        var x = event.clientX;
+        var y = event.clientY;
+   
+        if(y < 72){
+            $(".navbar").css("transition", "1s");
+            $(".navbar").css("top", "10px");
+        }
+        else{
+            $(".navbar").css("transition", "1s");
+            $(".navbar").css("top", "-70px");
+        }
+     
+     }); 
+    }
 }

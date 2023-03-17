@@ -24,8 +24,8 @@ namespace IA.Data.EntitiesConfiguration
             builder.Property(p => p.Resumo).IsRequired(false).HasColumnType("varchar(1000)");
             builder.Property(p => p.Sumario).IsRequired(false).HasColumnType("varchar(1000)");
             builder.Property(p => p.LivroCompleto).HasColumnType("varchar(2000)");
-            builder.Property(p => p.UsuarioId).IsRequired(true).HasColumnType("int");
-            builder.Property(p => p.TipoLivroId).IsRequired(true).HasColumnType("int");
+            builder.Property(p => p.UsuarioId).IsRequired(false).HasColumnType("int");
+            builder.Property(p => p.TipoLivroId).IsRequired(false).HasColumnType("int");
 
             //relationship
         }

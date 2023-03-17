@@ -1,0 +1,109 @@
+
+
+<div class="content">
+    <div class="header-login">
+        <div class="btn-close-modal">
+          <span class="closeModal" mat-dialog-close>x</span>
+        </div>
+    </div>
+    <div class="body-login">
+        <div class="div-title">
+            <h2 class="t-heading -size-m">Ótimo tê-lo de volta!</h2>
+        </div>
+
+        <form  #data = "ngForm" (ngSubmit) = "onClickLogin(data.value)">
+
+          <div class="external-auth-btn">
+
+            <div class="auth-btn" (click)="AuthGoogle()">
+              <div class="auth-icons"><img  id="icon-google" src="../../../../../assets/images/Icons/google.svg"></div>
+              <div class="auth-label">Continuar com google</div>
+            </div>
+
+            <div class="auth-btn" (click)="AuthFacebook()">
+              <div class="auth-icons"><img id="icon-facebook" src="../../../../../assets/images/Icons/facebook.svg"></div>
+              <div class="auth-label">Continuar com facebook</div>
+            </div>
+          </div> 
+
+          <div class="split">
+            <div class="left-line"><hr/></div>
+            <div class="label-split"><span>Ou</span></div>
+            <div class="right-line"> <hr/></div>
+          </div>
+
+          <div class="inputs">
+            <div class="input-form" style="margin-bottom: 20px;">        
+              <div class="div-input">
+                  <label class="input">
+                    <input  [ngClass]="{'input__field_required': nomeUsuario.invalid && (nomeUsuario.dirty || nomeUsuario.touched)}"
+                     id="nomeUsuario" class="input__field" type="text" name="nomeUsuario" ngModel required  #nomeUsuario="ngModel"/>
+                    <span class="input__label">Nome de Usuário</span>
+                  </label>
+
+                  <div *ngIf="nomeUsuario.invalid && (nomeUsuario.dirty || nomeUsuario.touched)" class="alert">
+                      <div *ngIf="nomeUsuario.errors?.['required']" style="color: red">
+                        * Nome de usuário é obrigatório
+                      </div>
+                  </div>
+              </div>
+        
+            </div>
+
+
+            <div class="input-form" style="margin-bottom: 20px;">        
+                <div class="div-input">
+                    <label class="input">
+                      <input [ngClass]="{'input__field_required': senha.invalid && (senha.dirty || senha.touched)}"
+                      id="senha" class="input__field" type="text" name="senha" ngModel required  #senha="ngModel"/>
+                      <span class="input__label">Senha</span>
+                    </label>
+
+                    <div *ngIf="senha.invalid && (senha.dirty || senha.touched)" class="alert">
+                      <div *ngIf="senha.errors?.['required']" style="color: red">
+                        * Senha é obrigatório
+                      </div>
+                  </div>
+
+                </div>
+          
+              </div>
+
+
+              <div class="input-form">        
+                <div class="div-input">
+                    <label class="input">
+                      <input  [ngClass]="{'input__field_required': confirmarSenha.invalid && (confirmarSenha.dirty || confirmarSenha.touched)}"
+                      id="confirmarSenha" class="input__field" type="text" name="confirmarSenha" ngModel required  #confirmarSenha="ngModel"/>
+                      <span class="input__label">Confirmar Senha</span>
+                    </label>
+                   
+                    <div *ngIf="confirmarSenha.invalid && (confirmarSenha.dirty || confirmarSenha.touched)" class="alert">
+                      <div *ngIf="confirmarSenha.errors?.['required']" style="color: red">
+                        * Confirmação da senha é obrigatório
+                      </div>
+                    </div>
+                </div>
+          
+              </div>
+          </div>
+
+          <button id="btn-sign" type="submit" data-testid="submitButton">
+            <span >Entrar</span>
+          </button>
+
+          <div class="create-account">
+            <span class="span-novo-escritor">Novo escritor? </span> <span class="span-criar-conta">Criar conta NewBook</span>
+          </div>
+
+          <hr style="margin-bottom: 20px;"/>
+
+          <div class="informations">
+            O NewBook coleta e usa dados pessoais de acordo com nossa <a src>Política de Privacidade.</a> 
+             Ao criar uma conta, você concorda com nossos<a>Termos e Condições.</a>
+          </div>
+       
+        </form>
+    </div>
+ 
+</div>

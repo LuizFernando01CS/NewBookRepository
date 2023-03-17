@@ -52,7 +52,7 @@ namespace NewBook.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Livro");
+                    b.ToTable("Livro", (string)null);
                 });
 #pragma warning restore 612, 618
         }

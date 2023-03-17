@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NewBook.Domain.Request;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,18 @@ namespace NewBook.Domain.Entities
 {
     public class InformacoesPessoais : EntityBase
     {
+        public InformacoesPessoais()
+        {
+        }
+
+        public InformacoesPessoais(RequestAuthGoogle requestAuth)
+        {
+            NomeAbreviado = requestAuth.given_name;
+            NomeCompleto = requestAuth.name;
+            NumeroTelefone1 = Convert.ToInt32(requestAuth.phoneNumber);
+            SetandoBasePeloSite();
+        }
+
         public string NomeAbreviado { get; set; }
         public string NomeCompleto { get; set; }
         public string CPF { get; set; }
@@ -15,8 +28,8 @@ namespace NewBook.Domain.Entities
         public int NumeroTelefone1 { get; set; }
         public int NumeroTelefone2 { get; set; }
         public DateTime Idade { get; set; }
-        public int InformacoesAdicionaisId { get; set; }
-        public int EnderecoId { get; set; }
+        public int? InformacoesAdicionaisId { get; set; }
+        public int? EnderecoId { get; set; }
 
         public List<Usuario> Usuario { get; set; }
         public InformacoesAdicionais InformacoesAdicionais { get; set; }

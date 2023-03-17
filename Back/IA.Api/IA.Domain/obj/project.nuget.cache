@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "c79s47PHGgBK9hW/iuMg8fT3qYRdKXIpYS8PUt5UZd4xGSgfrKC68BvLRhVjYjCZQhbseWipaEASuw/UxWNYMA==",
+  "dgSpecHash": "pkIlRWZeBSt8ib5rUZrkzFwFYEYweD/1gpbM31Ojc8FBl+VPKtX6/7HJPXooqCNUYPTfDopdz+hIO47JXkITYg==",
   "success": true,
-  "projectFilePath": "C:\\Projetos\\Back\\IA.Api\\IA.Domain\\IA.Domain.csproj",
+  "projectFilePath": "C:\\Projetos\\NewBook\\Back\\IA.Api\\IA.Domain\\IA.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lockl\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\lockl\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",

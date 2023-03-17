@@ -7,8 +7,8 @@ namespace IA.Domain.Entities
         public bool LivrosCriados { get; set; }   
         public FrequenciaEscritaEnum FrequenciaEscrita { get; set; }
         public bool JaEscreveu { get; set; }
-        public int GostosLivroExistenteId { get; set; }
-        public int LidosLivrosExistenteId { get; set; }
+        public int? GostosLivroExistenteId { get; set; }
+        public int? LidosLivrosExistenteId { get; set; }
 
         public List<InformacoesPessoais> InformacoesPessoais { get; set; }
     }

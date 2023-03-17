@@ -2,7 +2,7 @@
 {
     public class ChatIA : EntityBase
     {
-        public int UsuarioId { get; set; }
+        public int? UsuarioId { get; set; }
 
 
         public List<Mensagens> Mensagens { get; set; }

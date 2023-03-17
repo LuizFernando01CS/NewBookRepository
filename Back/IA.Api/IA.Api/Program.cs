@@ -87,10 +87,8 @@ void DependencyInjection()
     builder.Services.AddScoped(typeof(IServiceBase<>), typeof(ServiceBase<>));
     builder.Services.AddScoped<IInteligenciaArtificialService, InteligenciaArtificialService>();
     builder.Services.AddScoped<IMensagensService, MensagensService>();
-    builder.Services.AddScoped<IPalavrasService, PalavrasService>();
 
     builder.Services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
     builder.Services.AddScoped<IInteligenciaArtificialRepository, InteligenciaArtificialRepository>();
     builder.Services.AddScoped<IMensagensRepository, MensagensRepository>();
-    builder.Services.AddScoped<IPalavrasRepository, PalavrasRepository>();
 }

@@ -19,6 +19,7 @@ namespace NewBook.Data.Context
         public DbSet<Mensagens> Mensagens { get; set; }
         public DbSet<MensagensNaoEntendidas> MensagensNaoEntendidas { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<ChaveValor> ChaveValor { get; set; }
 
         public ContextDb(DbContextOptions<ContextDb> option) : base(option = new DbContextOptions<ContextDb>())
         {
@@ -45,6 +46,7 @@ namespace NewBook.Data.Context
             modelBuilder.ApplyConfiguration(new MensagensNaoEntendidas_config());
             modelBuilder.ApplyConfiguration(new Usuario_config());
             modelBuilder.ApplyConfiguration(new Livro_config());
+            modelBuilder.ApplyConfiguration(new ChaveValor_config());
         }
     }
 }

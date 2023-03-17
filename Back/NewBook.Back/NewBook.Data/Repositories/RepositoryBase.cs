@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NewBook.Data.Context;
+using NewBook.Domain.Entities;
 using NewBook.Domain.Interfaces.Repositories;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
@@ -11,7 +12,7 @@ namespace NewBook.Data.Repositories
 
         ContextDb db = new ContextDb(null);
 
-        public string Add(T entity)
+        public int Add(T entity)
         {
             ContextDb db = new ContextDb(null);
 
@@ -20,7 +21,7 @@ namespace NewBook.Data.Repositories
 
             PropertyInfo[] properties = entity.GetType().GetProperties();
 
-            string id = "";
+            int id = 0;
 
             foreach (PropertyInfo property in properties)
             {
@@ -28,7 +29,7 @@ namespace NewBook.Data.Repositories
 
                 if (attribute != null)
                 {
-                    id = Guid.Parse(property.GetValue(entity).ToString()).ToString();
+                    id = int.Parse(property.GetValue(entity).ToString());
                     break;
                 }
             }
@@ -36,14 +37,14 @@ namespace NewBook.Data.Repositories
             return id;
         }
 
-        public Task<string> AddAsync(T entity)
+        public async Task<int> AddAsync(T entity)
         {
-            db.Set<T>().AddAsync(entity);
-            db.SaveChangesAsync();
+            await db.Set<T>().AddAsync(entity);
+            await db.SaveChangesAsync();
 
             PropertyInfo[] properties = entity.GetType().GetProperties();
 
-            string id = "";
+            int id = 0;
 
             foreach (PropertyInfo property in properties)
             {
@@ -51,12 +52,12 @@ namespace NewBook.Data.Repositories
 
                 if (attribute != null)
                 {
-                    id = Guid.Parse(property.GetValue(entity).ToString()).ToString();
+                    id = int.Parse(property.GetValue(entity).ToString());
                     break;
                 }
             }
 
-            return Task.FromResult(id);
+            return await Task.FromResult(id);
         }
 
         public bool AddRange(List<T> entity)
@@ -78,8 +79,8 @@ namespace NewBook.Data.Repositories
         {
             try
             {
-                 db.Set<T>().AddRangeAsync(entity);
-                 db.SaveChanges();
+                db.Set<T>().AddRangeAsync(entity);
+                db.SaveChanges();
                 return true;
             }
             catch (Exception e)
@@ -149,7 +150,7 @@ namespace NewBook.Data.Repositories
             try
             {
                 db.Entry(entity).State = EntityState.Modified;
-                db.SaveChangesAsync();
+                db.SaveChanges();
             }
             catch (Exception e)
             {
@@ -159,9 +160,29 @@ namespace NewBook.Data.Repositories
             }
         }
 
+        public async Task UpdateAsync(T entity)
+        {
+            try
+            {
+                db.Entry(entity).State = EntityState.Modified;
+                await db.SaveChangesAsync();
+            }
+            catch (Exception e)
+            {
+                ContextDb db2 = new ContextDb(null);
+                db2.Entry(entity).State = EntityState.Modified;
+                await db2.SaveChangesAsync();
+            }
+        }
+
+        public async Task<ChaveValor> ObterChaveValor(string chave)
+        {
+            return await db.ChaveValor.Where(x => x.Chave.Equals(chave)).FirstOrDefaultAsync();
+        }
+
         public void Dispose()
         {
-            
+
             //throw new NotImplementedException();
         }
     }

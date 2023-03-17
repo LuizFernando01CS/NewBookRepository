@@ -16,13 +16,13 @@ namespace IA.Data.EntitiesConfiguration
             builder.Property(p => p.PeloSite).IsRequired(true).HasColumnType("bit");
 
             //table
-            builder.Property(p => p.Rua).IsRequired(true).HasColumnType("varchar(150)");
-            builder.Property(p => p.Bairro).IsRequired(true).HasColumnType("varchar(150)");
-            builder.Property(p => p.Cidade).IsRequired(true).HasColumnType("varchar(50)");
-            builder.Property(p => p.Estado).IsRequired(true).HasColumnType("varchar(50)");
-            builder.Property(p => p.Pais).IsRequired(true).HasColumnType("varchar(50)");
+            builder.Property(p => p.Rua).IsRequired(false).HasColumnType("varchar(150)");
+            builder.Property(p => p.Bairro).IsRequired(false).HasColumnType("varchar(150)");
+            builder.Property(p => p.Cidade).IsRequired(false).HasColumnType("varchar(50)");
+            builder.Property(p => p.Estado).IsRequired(false).HasColumnType("varchar(50)");
+            builder.Property(p => p.Pais).IsRequired(false).HasColumnType("varchar(50)");
             builder.Property(p => p.NumeroCasa).IsRequired(true).HasColumnType("int");
-            builder.Property(p => p.Complemento).IsRequired(true).HasColumnType("varchar(150)");
+            builder.Property(p => p.Complemento).IsRequired(false).HasColumnType("varchar(150)");
 
             //relationship
         }

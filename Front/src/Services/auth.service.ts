@@ -2,9 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Variaveisglobais } from 'src/variaveisglobais';
 import { RequestAuthGoogle } from '../app/interfaces/request/request-auth-google';
+import { Observable } from 'rxjs';
+import { ResponseAuthGoogle } from 'src/app/interfaces/response/response-auth-google';
+import { RequestAuthInterno } from 'src/app/interfaces/request/request-auth-interno';
 
 @Injectable()
-export class LoginService {
+export class AuthService {
   apiUrl = '';
   apiIAUrl = '';
   constructor(
@@ -16,15 +19,17 @@ export class LoginService {
   }
 
   public AuthGoogle(requestAuthGoogle: RequestAuthGoogle) {
-    return this.http.post<any>(
+    return this.http.post<ResponseAuthGoogle>(
       this.apiUrl + 'Auth/AuthGoogle',
       requestAuthGoogle
     );
   }
 
-  public ObterConversaIA(IdUsuario: string) {
-    return this.http.get<any>(
-      this.apiIAUrl + 'IA/ObterConversaIA/' + IdUsuario
+  public AuthInterno(requestAuthInterno: RequestAuthInterno){
+    return this.http.post<RequestAuthInterno>(
+      this.apiUrl + 'Auth/AuthInterno',
+      requestAuthInterno
     );
   }
+  
 }

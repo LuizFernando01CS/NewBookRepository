@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7yxRfNqQeYUe7fQjch5rVMdWaOTCkhGxRkVP5ExOlEcOPoOyvPIjNSfoG7lOYsEm3QMipUVuFgCuUHd3LgCvjw==",
+  "dgSpecHash": "v/+dYoKqNdXyEMGAy12G+XbwceDH1qSSu+e93FcgAqomADLcbYG6mTlJ9l2HLuYdmNWJyAvD6b+uWL8f5xidHA==",
   "success": true,
-  "projectFilePath": "C:\\Projetos\\Back\\IA.Api\\IA.Api\\IA.Api.csproj",
+  "projectFilePath": "C:\\Projetos\\NewBook\\Back\\IA.Api\\IA.Api\\IA.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lockl\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\lockl\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

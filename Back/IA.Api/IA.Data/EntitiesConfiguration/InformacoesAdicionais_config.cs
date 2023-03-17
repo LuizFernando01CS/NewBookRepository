@@ -19,8 +19,8 @@ namespace IA.Data.EntitiesConfiguration
             builder.Property(p => p.LivrosCriados).IsRequired(true).HasColumnType("bit");
             builder.Property(p => p.FrequenciaEscrita).IsRequired(true).HasColumnType("int");
             builder.Property(p => p.JaEscreveu).IsRequired(true).HasColumnType("bit");
-            builder.Property(p => p.GostosLivroExistenteId).IsRequired(true).HasColumnType("int");
-            builder.Property(p => p.LidosLivrosExistenteId).IsRequired(true).HasColumnType("int");
+            builder.Property(p => p.GostosLivroExistenteId).IsRequired(false).HasColumnType("int");
+            builder.Property(p => p.LidosLivrosExistenteId).IsRequired(false).HasColumnType("int");
 
             //relationship
         }

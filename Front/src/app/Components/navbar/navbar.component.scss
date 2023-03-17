@@ -1,30 +1,32 @@
 .navbar {
   width: 50%;
-  height: 50px;
-  background-color: black;
+  height: 55px;
+  background-color: rgba(0,0,0,0.8);
   position: absolute;
   z-index: auto;
-  top: 10px;
+  top: -70px;
   left: 25%;
   border-radius: 25px;
 
   .center {
     top: 15%;
-    width: 96%;
+    width: 98%;
     height: 70%;
     position: relative;
-    left: 2%;
+    left: 1%;
     background-color: white;
     border-radius: 25px;
-    display: flex;
     align-items: center;
     justify-content: flex-end;
 
-    .divSearch {
+    .divUser {
+ 
+      width: 200px;
       height: 100%;
-      width: 60%;
-      margin-right: 70px;
+      float: right;
       position: relative;
+      background-color: #ebc9c9;
+      border-radius: 25px;
 
       #inputSearch {
         padding-left: 50px;
@@ -35,36 +37,68 @@
         border-width: 2px;
       }
 
-      .btnSearch {
+      .btnUser {
         :hover {
-          background-color: brown;
-          border-radius: 50px;
-          height: 29px;
-          width: 29px;
-          text-align: center;
+          cursor: pointer;
+          background: rgba(105, 105, 105, 0.75);
+          width: 38px;
+          height: 91%;
+          border-radius: 25px;
+          top: 5%;
+          
         }
-
-        top: 3px;
-        position: absolute;
-        left: 15px;
-        z-index: 2;
+        top: 4%;
+        position: relative;
+        left: 160px;
         text-align: center;
+        background-color: rgba(0,0,0,0.8);
+        width: 38px;
+        height: 92%;
+        border-radius: 25px;
+
+        i{
+          color: white;
+          position: relative;
+          text-align: center;
+          top: 4px;
+          font-size: 25px;
+        }
 
         img {
           width: 25px;
           height: 25px;
         }
       }
+      
     }
 
-    .login {
-      width: 100px;
+    .divIA {
       height: 100%;
-      position: relative;
-      background-color: yellow;
+      width: 95%;
+      position: absolute;
+      background-color: #b75151;
       border-radius: 25px;
-      float: right;
       text-align: center;
+      top: 0px;
+
+      .btnIA {
+        :hover {
+
+        }
+        top: 4%;
+        position: relative;
+        left: 846px;
+        text-align: center;
+        background-color: rgba(0,0,0,0.8);
+        width: 38px;
+        height: 92%;
+        border-radius: 25px;
+
+        img {
+          width: 25px;
+          height: 25px;
+        }
+      }
 
       span {
         top: 25%;

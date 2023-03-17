@@ -1,7 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+
 using Microsoft.AspNetCore.Mvc;
+using NewBook.Api.Model;
 using NewBook.Application.Interface.Application;
 using NewBook.Domain.Entities;
+using NewBook.Domain.Enums;
+using NewBook.Domain.Models;
 using NewBook.Domain.Request;
 using NewBook.Domain.Response;
 
@@ -16,6 +20,24 @@ namespace NewBook.Api.Controllers
         public UsuarioController(IUsuarioApplication usuarioApplication)
         {
             _usuarioApplication = usuarioApplication;
+
+        }
+
+
+        [HttpGet("teste")]
+        public void teste([FromQuery] FrequenciaEscritaEnum teste)
+        {
+            
+        }
+
+        public class testes
+        {
+            public string name { get; set; }
+            public string[] array { get; set; }
+        }
+        public class array
+        {
+            public string name { get; set; }
         }
 
         [Authorize]
@@ -32,29 +54,12 @@ namespace NewBook.Api.Controllers
             }
         }
 
-        [HttpPost("Login")]
-        public IActionResult Login(RequestLogin login)
+        [HttpPost("CriarUsuario")]
+        public async Task<int> CriarUsuario(UsuarioInternoModel usuarioInterno)
         {
             try
             {
-               var result = _usuarioApplication.Logar(login);
-                if (result.error is null)
-                    return Ok(result);
-                else
-                    return BadRequest(result);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro na aplicação, erro técnico:" + ex.Message);
-            }
-        }
-
-        [HttpPost("CriarConta")]
-        public IActionResult CriarConta(RequestCriarConta requestCriarConta)
-        {
-            try
-            {
-                _usuarioApplication.CriarConta(requestCriarConta);
+                return await _usuarioApplication.AddAsync(new Usuario(usuarioInterno));
             }
             catch (Exception ex)
             {

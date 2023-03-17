@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -31,6 +31,12 @@ import { GoogleAuthProvider } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { NavbarComponent } from './Components/navbar/navbar.component';
+import { AuthService } from '../Services/auth.service';
+import { LoginComponent } from './Components/navbar/Component/login/login.component';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { UsuarioService } from '../Services/usuario.service';
+
+
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCAZLfSEP2m8BDMTxtzNSLaMsmkLbToxAg',
@@ -52,6 +58,7 @@ const firebaseConfig = {
     LivrariaComponent,
     MeusLivrosComponent,
     NavbarComponent,
+    LoginComponent,
   ],
 
   imports: [
@@ -70,6 +77,8 @@ const firebaseConfig = {
     FormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireModule,
+    MatDialogModule,
+    ReactiveFormsModule
   ],
 
   exports: [
@@ -93,8 +102,10 @@ const firebaseConfig = {
     ConversaIaService,
     AngularFireAuth,
     GoogleAuthProvider,
+    AuthService,
+    UsuarioService
   ],
-
+  
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,4 +1,5 @@
 ﻿using NewBook.Application.Interface.Application;
+using NewBook.Domain.Entities;
 using NewBook.Domain.Interfaces.Services;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace NewBook.Application.Application
             _serviceBase = iserviceBase;
         }
 
-        public string Add(T entity)
+        public int Add(T entity)
         {
             return _serviceBase.Add(entity);
         }
@@ -25,6 +26,7 @@ namespace NewBook.Application.Application
         {
             return _serviceBase.UpdateRange(entity);
         }
+
         public bool AddRange(List<T> entity)
         {
             return _serviceBase.AddRange(entity);
@@ -57,13 +59,24 @@ namespace NewBook.Application.Application
         {
             _serviceBase.Update(entity);
         }
-        public async Task<string> AddAsync(T entity)
+
+        public async Task UpdateAsync(T entity)
+        {
+            await _serviceBase.UpdateAsync(entity);
+        }
+
+        public async Task<int> AddAsync(T entity)
         {
             return await _serviceBase.AddAsync(entity);
         }
         public async Task<bool> AddRangeAsync(List<T> entity)
         {
             return await _serviceBase.AddRangeAsync(entity);
+        }
+
+        public async Task<ChaveValor> ObterChaveValor(string chave)
+        {
+            return await _serviceBase.ObterChaveValor(chave);
         }
     }
 }

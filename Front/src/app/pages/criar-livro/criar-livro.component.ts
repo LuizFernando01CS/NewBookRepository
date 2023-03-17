@@ -7,6 +7,8 @@ import { ConversaIaService } from '../../../Services/conversa.ia.service';
 import { GoogleAuthProvider } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { RequestAuthGoogle } from '../../../app/interfaces/request/request-auth-google';
+import { AuthService } from 'src/Services/auth.service';
+import { ResponseAuthGoogle } from 'src/app/interfaces/response/response-auth-google';
 
 @Component({
   selector: 'app-criar-livro',
@@ -20,6 +22,7 @@ export class CriarLivroComponent implements OnInit {
   teste2 = false;
   user: any;
   logado = false;
+  responseAuthGoogle: any;
   mensagens: any = [
     {
       mensagem: 'mensagem1das4d5sa46dsad',
@@ -46,8 +49,7 @@ export class CriarLivroComponent implements OnInit {
   constructor(
     private activeRoute: ActivatedRoute,
     private iaService: IAService,
-    private conversaIaService: ConversaIaService,
-    private angularFireAuth: AngularFireAuth
+    private conversaIaService: ConversaIaService
   ) {
     this.activeRoute.queryParams.subscribe((qp) => {
       this.visualizando = this.activeRoute.snapshot.params['visualizar'];
@@ -55,40 +57,7 @@ export class CriarLivroComponent implements OnInit {
   }
 
   login() {
-    this.angularFireAuth.signInWithPopup(new GoogleAuthProvider()).then(
-      (status: any) => {
-        console.log('VEEER STATUS', status);
-        this.user = status;
-        console.log(
-          'VEER A MAIS',
-          this.user.additionalUserInfo.profile.picture
-        );
-
-        var requestAuthGoogle: RequestAuthGoogle = {
-          isNewUser: status.additionalUserInfo.isNewUser,
-          email: status.additionalUserInfo.profile.email,
-          family_name: status.additionalUserInfo.profile.family_name,
-          given_name: status.additionalUserInfo.profile.given_name,
-          name: status.additionalUserInfo.profile.name,
-          idFirebase: status.additionalUserInfo.profile.id,
-          locale: status.additionalUserInfo.profile.locale,
-          image: status.additionalUserInfo.profile.picture,
-          verified_email: status.additionalUserInfo.profile.verified_email,
-          accessToken: status.credential.accessToken,
-          idToken: status.credential.idToken,
-          providerId: status.credential.providerId,
-          SignInMethod: status.credential.SignInMethod,
-          phoneNumber: status.user.delegate.phoneNumber,
-          creationTime: status.user.delegate.metadata.creationTime,
-          lastSignInTime: status.user.delegate.metadata.lastSignInTime,
-        };
-
-        this.logado = true;
-      },
-      (err) => {
-        alert(err.mensagem);
-      }
-    );
+   
   }
 
   ngOnInit() {

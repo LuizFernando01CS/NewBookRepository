@@ -1,9 +1,12 @@
-﻿using IA.Domain.Interfaces.Repositories;
+﻿using IA.Core.Enums;
+using IA.Domain.Interfaces.Repositories;
 using IA.Domain.Interfaces.Services;
 using IA.Domain.Request;
 using IA.Domain.Response;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json.Serialization;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace IA.Api.Controllers
 {
@@ -11,7 +14,6 @@ namespace IA.Api.Controllers
     {
         private readonly IInteligenciaArtificialService _inteligenciaArtificialService;
         private readonly IChatIAService _chatIAService;
-
         public IAController(
             IInteligenciaArtificialService inteligenciaArtificialService,
             IChatIAService chatIAService)
@@ -19,6 +21,7 @@ namespace IA.Api.Controllers
             _inteligenciaArtificialService = inteligenciaArtificialService;
             _chatIAService = chatIAService;
         }
+
 
         [HttpPost("GetAll")]
         public async void GetAll([FromBody]BuscarMensagemRequest command)

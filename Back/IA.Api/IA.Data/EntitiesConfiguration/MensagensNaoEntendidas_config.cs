@@ -16,8 +16,8 @@ namespace IA.Data.EntitiesConfiguration
             builder.Property(p => p.PeloSite).IsRequired(true).HasColumnType("bit");
 
             //table
-            builder.Property(p => p.MensagensId).IsRequired(true).HasColumnType("int");
-            builder.Property(p => p.MensagemRecebida).IsRequired(true).HasColumnType("varchar(1000)");
+            builder.Property(p => p.MensagensId).IsRequired(false).HasColumnType("int");
+            builder.Property(p => p.MensagemRecebida).IsRequired(false).HasColumnType("varchar(1000)");
             builder.Property(p => p.StatusEntendimento).IsRequired(true).HasColumnType("int");
 
             //relationship

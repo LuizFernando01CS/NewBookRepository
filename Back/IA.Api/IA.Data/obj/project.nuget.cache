@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6ppnvOJWIh8Tgk8xkdTGnsaRt+e9ajhhKY818aCqRSfvK8wJ0NCTtv1Fl7ZKFIiPebOo5oeSVEshnIodgrtY9Q==",
+  "dgSpecHash": "eeGvtj08Wof/Hbc6e1CFsPZ/ES93zfiFiqFZJ7rJHEOAH1kExI1OtLjDOMEX3xDKNRrK+f23nY4ostNEDnYdCQ==",
   "success": true,
-  "projectFilePath": "C:\\Projetos\\Back\\IA.Api\\IA.Data\\IA.Data.csproj",
+  "projectFilePath": "C:\\Projetos\\NewBook\\Back\\IA.Api\\IA.Data\\IA.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lockl\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\lockl\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

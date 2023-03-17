@@ -13,5 +13,19 @@ namespace NewBook.Domain.Services
             _usuarioRepository = usuarioRepository;
         }
 
+        public async Task<Usuario> ObterPeloIdFireBase(string idFirebase)
+        {
+            return await _usuarioRepository.ObterPeloIdFireBase(idFirebase);
+        }
+
+        public async Task<Usuario> ObterPeloEmail(string email)
+        {
+            return await _usuarioRepository.ObterPeloEmail(email);
+        }
+
+        public async Task<Usuario> ObterPeloEmailESenha(string email, string senha)
+        {
+            return await _usuarioRepository.ObterPeloEmailESenha(email, senha);
+        }
     }
 }

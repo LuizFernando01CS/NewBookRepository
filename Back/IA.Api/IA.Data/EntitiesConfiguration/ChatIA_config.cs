@@ -16,7 +16,7 @@ namespace IA.Data.EntitiesConfiguration
             builder.Property(p => p.PeloSite).IsRequired(true).HasColumnType("bit");
 
             //table
-            builder.Property(p => p.UsuarioId).IsRequired(true).HasColumnType("int");
+            builder.Property(p => p.UsuarioId).IsRequired(false).HasColumnType("int");
 
             //relationship
             builder.HasOne(x => x.Usuario).WithMany(x => x.ChatIA).HasForeignKey(x => x.UsuarioId);
