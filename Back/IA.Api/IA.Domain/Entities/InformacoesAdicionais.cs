@@ -10,6 +10,6 @@ namespace IA.Domain.Entities
         public int? GostosLivroExistenteId { get; set; }
         public int? LidosLivrosExistenteId { get; set; }
 
-        public List<InformacoesPessoais> InformacoesPessoais { get; set; }
+        public List<Usuario> Usuario { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace IA.Domain.Services
             _irepositoryBase = irepositoryBase;
         }
 
-        public string Add(T entity)
+        public int Add(T entity)
         {
             return _irepositoryBase.Add(entity);
         }
@@ -44,16 +44,27 @@ namespace IA.Domain.Services
             return _irepositoryBase.GetAll();
         }
 
-        public T GetById(Guid id)
+        public T GetById(int id)
         {
             return _irepositoryBase.GetById(id);
+        }
+
+        public async Task<T> GetByIdAsync(int id)
+        {
+            return await _irepositoryBase.GetByIdAsync(id);
         }
 
         public void Update(T entity)
         {
             _irepositoryBase.Update(entity);
         }
-        public async Task<string> AddAsync(T entity)
+
+        public async Task UpdateAsync(T entity)
+        {
+            await _irepositoryBase.UpdateAsync(entity);
+        }
+
+        public async Task<int> AddAsync(T entity)
         {
             return await _irepositoryBase.AddAsync(entity);
         }

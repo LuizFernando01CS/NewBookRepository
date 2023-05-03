@@ -1,0 +1,37 @@
+<div class="content">
+    <ngx-skeleton-loader count="1" appearance="line" *ngIf="!loadedChat"></ngx-skeleton-loader>
+    <form  #data = "ngForm" (ngSubmit) = "SaveEdit()">
+        <div class="edits">
+            <div class="colors-picker">
+                <div class="color-set">
+                    <span>Cor Usuario</span>
+                        <div class="edit-color"  [(colorPicker)]="colorUser" [style.background]="colorUser"></div>          
+                </div>
+                <div class="color-set">
+                    <span>Cor IA</span>            
+                        <div class="edit-color"  [(colorPicker)]="colorIA" [style.background]="colorIA"></div>
+                </div>
+            
+                <div class="color-set">
+                    <span>Cor Chat</span>
+                        <div class="edit-color"  [(colorPicker)]="colorChatIA" [style.background]="colorChatIA"></div>
+                </div>
+            </div>
+            <div class="loading-save" *ngIf="loaded">
+                <app-loading></app-loading>
+            </div>
+        </div>
+                
+        <div class="btns">
+            <button class="btn-sign" (click)="Cancelar()" style="margin-left: 20%; margin-right: 5%;"  [disabled]="loaded">
+                <span >Cancelar</span>
+            </button>
+        
+            <button class="btn-sign" type="submit" data-testid="submitButton" style="margin-right: 20%;"  [disabled]="loaded">
+                <span >Salvar</span>
+            </button>
+        </div>
+</form>
+</div>
+
+

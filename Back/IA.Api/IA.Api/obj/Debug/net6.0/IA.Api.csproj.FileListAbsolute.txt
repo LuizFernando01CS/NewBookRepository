@@ -136,3 +136,13 @@ C:\Projetos\NewBook\Back\IA.Api\IA.Api\obj\Debug\net6.0\scopedcss\bundle\IA.Api.
 C:\Projetos\NewBook\Back\IA.Api\IA.Api\obj\Debug\net6.0\IA.Api.csproj.CopyComplete
 C:\Projetos\NewBook\Back\IA.Api\IA.Api\obj\Debug\net6.0\IA.Api.genruntimeconfig.cache
 C:\Projetos\NewBook\Back\IA.Api\IA.Api\obj\Debug\net6.0\ref\IA.Api.dll
+C:\Projetos\NewBook\Back\IA.Api\IA.Api\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Projetos\NewBook\Back\IA.Api\IA.Api\bin\Debug\net6.0\System.Web.Http.dll
+C:\Projetos\NewBook\Back\IA.Api\IA.Api\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Projetos\NewBook\Back\IA.Api\IA.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Projetos\NewBook\Back\IA.Api\IA.Api\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Projetos\NewBook\Back\IA.Api\IA.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Projetos\NewBook\Back\IA.Api\IA.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Projetos\NewBook\Back\IA.Api\IA.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Projetos\NewBook\Back\IA.Api\IA.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Projetos\NewBook\Back\IA.Api\IA.Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll

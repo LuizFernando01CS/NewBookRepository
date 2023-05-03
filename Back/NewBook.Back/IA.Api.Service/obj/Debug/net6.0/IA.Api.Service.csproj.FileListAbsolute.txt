@@ -1,0 +1,12 @@
+C:\Projetos\NewBook\Back\NewBook.Back\IA.Api.Service\bin\Debug\net6.0\IA.Api.Service.deps.json
+C:\Projetos\NewBook\Back\NewBook.Back\IA.Api.Service\bin\Debug\net6.0\IA.Api.Service.dll
+C:\Projetos\NewBook\Back\NewBook.Back\IA.Api.Service\bin\Debug\net6.0\IA.Api.Service.pdb
+C:\Projetos\NewBook\Back\NewBook.Back\IA.Api.Service\obj\Debug\net6.0\IA.Api.Service.csproj.AssemblyReference.cache
+C:\Projetos\NewBook\Back\NewBook.Back\IA.Api.Service\obj\Debug\net6.0\IA.Api.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\NewBook\Back\NewBook.Back\IA.Api.Service\obj\Debug\net6.0\IA.Api.Service.AssemblyInfoInputs.cache
+C:\Projetos\NewBook\Back\NewBook.Back\IA.Api.Service\obj\Debug\net6.0\IA.Api.Service.AssemblyInfo.cs
+C:\Projetos\NewBook\Back\NewBook.Back\IA.Api.Service\obj\Debug\net6.0\IA.Api.Service.csproj.CoreCompileInputs.cache
+C:\Projetos\NewBook\Back\NewBook.Back\IA.Api.Service\obj\Debug\net6.0\IA.Api.Service.dll
+C:\Projetos\NewBook\Back\NewBook.Back\IA.Api.Service\obj\Debug\net6.0\refint\IA.Api.Service.dll
+C:\Projetos\NewBook\Back\NewBook.Back\IA.Api.Service\obj\Debug\net6.0\IA.Api.Service.pdb
+C:\Projetos\NewBook\Back\NewBook.Back\IA.Api.Service\obj\Debug\net6.0\ref\IA.Api.Service.dll

@@ -16,7 +16,7 @@ namespace IA.Data.Repositories
 
         ContextDb db = new ContextDb(null);
 
-        public string Add(T entity)
+        public int Add(T entity)
         {
             ContextDb db = new ContextDb(null);
 
@@ -25,7 +25,7 @@ namespace IA.Data.Repositories
 
             PropertyInfo[] properties = entity.GetType().GetProperties();
 
-            string id = "";
+            int id = 0;
 
             foreach (PropertyInfo property in properties)
             {
@@ -33,7 +33,7 @@ namespace IA.Data.Repositories
 
                 if (attribute != null)
                 {
-                    id = Guid.Parse(property.GetValue(entity).ToString()).ToString();
+                    id = int.Parse(property.GetValue(entity).ToString());
                     break;
                 }
             }
@@ -41,14 +41,14 @@ namespace IA.Data.Repositories
             return id;
         }
 
-        public Task<string> AddAsync(T entity)
+        public async Task<int> AddAsync(T entity)
         {
-            db.Set<T>().AddAsync(entity);
-            db.SaveChangesAsync();
+            await db.Set<T>().AddAsync(entity);
+            await db.SaveChangesAsync();
 
             PropertyInfo[] properties = entity.GetType().GetProperties();
 
-            string id = "";
+            int id = 0;
 
             foreach (PropertyInfo property in properties)
             {
@@ -56,60 +56,37 @@ namespace IA.Data.Repositories
 
                 if (attribute != null)
                 {
-                    id = Guid.Parse(property.GetValue(entity).ToString()).ToString();
+                    id = int.Parse(property.GetValue(entity).ToString());
                     break;
                 }
             }
 
-            return Task.FromResult(id);
+            return id;
         }
 
         public bool AddRange(List<T> entity)
         {
-            try
-            {
-                db.Set<T>().AddRange(entity);
-                db.SaveChanges();
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-
-            }
+            db.Set<T>().AddRange(entity);
+            db.SaveChanges();
+            return true;
         }
 
         public async Task<bool> AddRangeAsync(List<T> entity)
         {
-            try
-            {
-                db.Set<T>().AddRangeAsync(entity);
-                db.SaveChanges();
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-
-            }
+            db.Set<T>().AddRangeAsync(entity);
+            db.SaveChanges();
+            return true;
         }
 
         public bool UpdateRange(List<T> entity)
         {
-            try
+            foreach (var item in entity)
             {
-                foreach (var item in entity)
-                {
-                    db.Entry(item).State = EntityState.Modified;
-                    db.SaveChanges();
-                }
+                db.Entry(item).State = EntityState.Modified;
+                db.SaveChanges();
+            }
 
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
+            return true;
         }
 
         public void Delete(T entity)
@@ -140,7 +117,7 @@ namespace IA.Data.Repositories
             return await db.Set<T>().ToListAsync();
         }
 
-        public T GetById(Guid id)
+        public T GetById(int id)
         {
             var find = db.Set<T>().Find(id);
 
@@ -148,6 +125,16 @@ namespace IA.Data.Repositories
 
             return find;
         }
+
+        public async Task<T> GetByIdAsync(int id)
+        {
+            var find = await db.Set<T>().FindAsync(id);
+
+            db.Entry(find).State = EntityState.Detached;
+
+            return find;
+        }
+
 
         public void Update(T entity)
         {
@@ -161,6 +148,21 @@ namespace IA.Data.Repositories
                 ContextDb db2 = new ContextDb(null);
                 db2.Entry(entity).State = EntityState.Modified;
                 db2.SaveChanges();
+            }
+        }
+
+        public async Task UpdateAsync(T entity)
+        {
+            try
+            {
+                db.Entry(entity).State = EntityState.Modified;
+                await db.SaveChangesAsync();
+            }
+            catch
+            {
+                ContextDb db2 = new ContextDb(null);
+                db2.Entry(entity).State = EntityState.Modified;
+                await db2.SaveChangesAsync();
             }
         }
 

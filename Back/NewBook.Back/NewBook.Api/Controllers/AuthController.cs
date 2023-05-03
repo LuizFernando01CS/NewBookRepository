@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using NewBook.Api.Authenticate.Interface;
 using NewBook.Application.Interface.Application;
 using NewBook.Domain.Request;
+using Newtonsoft.Json.Linq;
 
 namespace NewBook.Api.Controllers
 {
@@ -8,41 +11,22 @@ namespace NewBook.Api.Controllers
     [Route("[controller]")]
     public class AuthController : Controller
     {
-        private readonly IAuthApplication _authApplication;
+        private readonly IAuthenticateValidator _authenticateValidator;
 
-        public AuthController(IAuthApplication authApplication)
+        public AuthController(
+            IAuthenticateValidator authenticateValidator)
         {
-            _authApplication = authApplication;
+            _authenticateValidator = authenticateValidator;
         }
+
+        [Authorize]
+        [HttpGet("VerificarAutenticacao")]
+        public async Task<IActionResult> VerificarAutenticacao() => Ok(true);
+
+        [HttpGet("ValidateToken/{token}")]
+        public async Task<IActionResult> ValidateToken(string token) => Ok(await _authenticateValidator.GoogleValidateToken(token));
 
         [HttpPost("AuthInterno")]
-        public async Task<IActionResult> AuthInterno(RequestAuthInterno login)
-        {
-            try
-            {
-                var result = await _authApplication.AuthInterno(login);
-                if (result.error is null)
-                    return Ok(result);
-                else
-                    return BadRequest(result);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro na aplicação, erro técnico:" + ex.Message);
-            }
-        }
-
-        [HttpPost("AuthGoogle")]
-        public async Task<IActionResult> AuthGoogle(RequestAuthGoogle requestAuth)
-        {
-            try
-            {
-                return Ok(await _authApplication.AuthGoogle(requestAuth));
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro na aplicação, erro técnico:" + ex.Message);
-            }
-        }
+        public async Task<IActionResult> AuthInterno(RequestAuthInterno login) => Ok(await _authenticateValidator.AuthInterno(login));      
     }
 }

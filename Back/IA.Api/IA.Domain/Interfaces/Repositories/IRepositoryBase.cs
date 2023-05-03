@@ -2,16 +2,18 @@
 {
     public interface IRepositoryBase<T> where T : class
     {
-        string Add(T entity);
+        int Add(T entity);
         bool AddRange(List<T> entity);
         bool UpdateRange(List<T> entity);
-        T GetById(Guid id);
+        T GetById(int id);
+        Task<T> GetByIdAsync(int id);
         IEnumerable<T> GetAll();
         void Update(T entity);
+        Task UpdateAsync(T entity);
         void Delete(T entity);
         bool DeleteRange(List<T> entity);
         void Dispose();
-        Task<string> AddAsync(T entity);
+        Task<int> AddAsync(T entity);
         Task<bool> AddRangeAsync(List<T> entity);
     }
 }

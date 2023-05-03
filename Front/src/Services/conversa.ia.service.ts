@@ -17,21 +17,15 @@ export class ConversaIaService {
     this.apiIAUrl = this.variaveisglobais.apiIAUrl;
   }
 
-  public StartVoice() {
-    this.funcaoIaService.start();
-  }
+  // public StartVoice() {
+  //   this.funcaoIaService.start();
+  // }
 
-  public StopVoice() {
-    this.funcaoIaService.stop();
-  }
+  // public StopVoice() {
+  //   this.funcaoIaService.stop();
+  // }
 
   public getAll() {
     return this.http.get<any>(this.apiUrl + 'Livro/GetAll');
-  }
-
-  public ObterConversaIA(IdUsuario: string) {
-    return this.http.get<any>(
-      this.apiIAUrl + 'IA/ObterConversaIA/' + IdUsuario
-    );
   }
 }

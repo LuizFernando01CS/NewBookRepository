@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "yH0liu8nP44x1haejqTP26JbVTslxoxWZ2tAZNtXmrmUoqFa66WEnK1902NujHUB+fP5QhP7w+oiGaUFCfdCYw==",
+  "success": true,
+  "projectFilePath": "C:\\Projetos\\NewBook\\Back\\NewBook.Back\\NewBook.CrossCutting\\NewBook.CrossCutting.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lockl\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -34,7 +34,8 @@
               {"glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/"}
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css" 
             ],
             "scripts": [
               "node_modules/tinymce/tinymce.min.js"
@@ -99,7 +100,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css" 
             ],
             "scripts": []
           }

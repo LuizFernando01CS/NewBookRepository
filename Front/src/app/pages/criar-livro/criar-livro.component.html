@@ -2,86 +2,31 @@
   <div class="content">
     <div class="underTextEditor">
       <div class="textEditor">
-        <div class="chat-content">
-          <div class="contato"></div>
-
-          <div class="chatbot">
-            <ul>
-              <li class="button1"></li>
-              <li class="button2"></li>
-              <li class="button3"></li>
-            </ul>
-            <ul *ngFor="let mensage of mensagens">
-              <li class="iconePerfil"></li>
-              <li class="textoMensagem">
-                <div>
-                  <span>{{ mensage.mensagem }}</span>
-
-                  <button (click)="login()">TESTAR LOGIN</button>
-
-                  <!-- <img src="{{ user.additionalUserInfo.profile.picture }}" /> -->
-                </div>
-              </li>
-              <li class="avaliacao"></li>
-            </ul>
-            <ul>
-              <li class="inputMensagem"></li>
-              <li class="buttonSendMensagem"></li>
-            </ul>
-            <!-- <table> -->
-            <!-- <tr *ngFor="let mensagem in mensagens">
-                          <th>imagem</th>
-                          <th>{{mensagem}}</th>
-                          <th>copiar</th>
-                        </tr> -->
-            <!-- <tr class="trs"> 
-                          <td class="tds">imagem1</td>
-                          <td class="tds">mensagem1</td>
-                          <td class="tds">copiar1</td>
-                        </tr>
-                        <tr class="trs">
-                          <td class="tds">imagem2</td>
-                          <td class="tds">mensagem2</td>
-                          <td class="tds">copiar2</td>
-                        </tr>
-                    </table> -->
-          </div>
+        <div [ngClass]="activePhone ? 'btnFunctionIAActive' : 'btnFunctionIA'" style="right: 15px;" (click)="ActivePhone()">
+          <i class="fa-solid fa-headphones" style="height: 25px;"></i>
         </div>
 
-        <!--           
-          <input [(ngModel)]="pergunta"/>
-
-          <button (click)="teste()"> testar</button>
+        <div [ngClass]="activeMicrophone ? 'btnFunctionIAActive' : 'btnFunctionIA'" style="right: 60px;" (click)="ActiveMicrophone()">
+          <i class="fa-solid fa-microphone" style="height: 25px;"></i>
+        </div>
 
           <editor 
-            (ngModel)="livro"
+            [(ngModel)]="livro"
             (ngModelChange)="changeLivro()"
             style="height: 100%;" 
             class="editorTiny"
-            [init]="editorConfig"> </editor> -->
+            [init]="editorConfig"> </editor>
       </div>
     </div>
 
     <div class="nav-opcoes">
-      <ul>
-        <li>
-          <button (click)="AtiviarIA()">Ativar IA</button>
-        </li>
-        <li>
-          <button (click)="PararIA()">Parar IA</button>
-        </li>
-        <li>
-          <button></button>
-        </li>
-        <li>
-          <button></button>
-        </li>
 
-        <textarea
-          id="chatBot"
-          placeholder='Exemplo: "Escreva um cápitulo de um livro drámatico..." '
-        ></textarea>
-      </ul>
+      <div class="app-chat-bot" >
+        <div class="edit-btn-IA" (click)="EditIA()" *ngIf="!EditingIA"><i class="fa-solid fa-robot"></i></div>
+        <app-chatbot *ngIf="!EditingIA"></app-chatbot>
+        <app-edit-bot *ngIf="EditingIA" (open)="onOpen()"></app-edit-bot>
+      </div>
+  
     </div>
 
     <table>

@@ -51,10 +51,16 @@ namespace NewBook.Application.Application
             return _serviceBase.GetAll();
         }
 
-        public T GetById(Guid id)
+        public T GetById(int id)
         {
             return _serviceBase.GetById(id);
         }
+
+        public Task<T> GetByIdAsync(int id)
+        {
+            return _serviceBase.GetByIdAsync(id);
+        }
+
         public void Update(T entity)
         {
             _serviceBase.Update(entity);

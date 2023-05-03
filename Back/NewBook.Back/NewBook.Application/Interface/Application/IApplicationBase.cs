@@ -4,7 +4,9 @@ namespace NewBook.Application.Interface.Application
 {
     public interface IApplicationBase<T> where T : class
     {
-        T GetById(Guid id);
+        T GetById(int id);
+
+        Task<T> GetByIdAsync(int id);
 
         IEnumerable<T> GetAll();
 

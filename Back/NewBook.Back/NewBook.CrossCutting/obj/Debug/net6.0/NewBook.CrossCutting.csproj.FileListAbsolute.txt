@@ -1,0 +1,15 @@
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.CrossCutting\bin\Debug\net6.0\NewBook.CrossCutting.deps.json
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.CrossCutting\bin\Debug\net6.0\NewBook.CrossCutting.dll
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.CrossCutting\bin\Debug\net6.0\NewBook.CrossCutting.pdb
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.CrossCutting\bin\Debug\net6.0\NewBook.Domain.dll
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.CrossCutting\bin\Debug\net6.0\NewBook.Domain.pdb
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.CrossCutting\obj\Debug\net6.0\NewBook.CrossCutting.csproj.AssemblyReference.cache
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.CrossCutting\obj\Debug\net6.0\NewBook.CrossCutting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.CrossCutting\obj\Debug\net6.0\NewBook.CrossCutting.AssemblyInfoInputs.cache
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.CrossCutting\obj\Debug\net6.0\NewBook.CrossCutting.AssemblyInfo.cs
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.CrossCutting\obj\Debug\net6.0\NewBook.CrossCutting.csproj.CoreCompileInputs.cache
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.CrossCutting\obj\Debug\net6.0\NewBook.CrossCutting.csproj.CopyComplete
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.CrossCutting\obj\Debug\net6.0\NewBook.CrossCutting.dll
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.CrossCutting\obj\Debug\net6.0\refint\NewBook.CrossCutting.dll
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.CrossCutting\obj\Debug\net6.0\NewBook.CrossCutting.pdb
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.CrossCutting\obj\Debug\net6.0\ref\NewBook.CrossCutting.dll

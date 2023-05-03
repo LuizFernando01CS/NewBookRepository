@@ -5,6 +5,6 @@ namespace IA.Domain.Interfaces.Repositories
 {
     public interface IChatIARepository : IRepositoryBase<ChatIA>
     {
-        Task<List<BuscarChatIAResponse>> ObterChatPeloIdUsuario(int IdUsuario);
+        Task<BuscarChatIAResponse> ObterChatPeloIdUsuario(int IdUsuario);
     }
 }

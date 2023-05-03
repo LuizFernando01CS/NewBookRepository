@@ -152,6 +152,7 @@ C:\Projetos\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\Microsoft.IdentityMod
 C:\Projetos\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\appsettings.Development.json
 C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\appsettings.json
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\firebase.config.json
 C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\NewBook.Api.exe
 C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\NewBook.Api.deps.json
 C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\NewBook.Api.runtimeconfig.json
@@ -159,7 +160,10 @@ C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\NewBook.Api.d
 C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\NewBook.Api.pdb
 C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\AutoMapper.dll
 C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\Firebase.Auth.dll
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\Google.Apis.dll
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\Google.Apis.Auth.PlatformServices.dll
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\Google.Apis.Auth.dll
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\Google.Apis.Core.dll
 C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\Humanizer.dll
 C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
@@ -233,3 +237,12 @@ C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\obj\Debug\net6.0\refint\NewBoo
 C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\obj\Debug\net6.0\NewBook.Api.pdb
 C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\obj\Debug\net6.0\NewBook.Api.genruntimeconfig.cache
 C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\obj\Debug\net6.0\ref\NewBook.Api.dll
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Google.dll
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\NewBook.CrossCutting.dll
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\NewBook.CrossCutting.pdb
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\IA.Api.Service.dll
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Api\bin\Debug\net6.0\IA.Api.Service.pdb

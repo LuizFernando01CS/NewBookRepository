@@ -43,3 +43,5 @@ C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Application\obj\Debug\net6.0\NewBo
 C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Application\obj\Debug\net6.0\refint\NewBook.Application.dll
 C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Application\obj\Debug\net6.0\NewBook.Application.pdb
 C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Application\obj\Debug\net6.0\ref\NewBook.Application.dll
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Application\bin\Debug\net6.0\NewBook.CrossCutting.dll
+C:\Projetos\NewBook\Back\NewBook.Back\NewBook.Application\bin\Debug\net6.0\NewBook.CrossCutting.pdb

@@ -2,7 +2,8 @@
 {
     public enum TipoMensagemEnum
     {
-        Pergunta = 1,
-        Comando = 2,
+        Default = 1,
+        Tradutor = 2,
+        Sinonimo = 3,
     }
 }

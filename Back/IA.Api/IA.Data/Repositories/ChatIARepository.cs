@@ -9,25 +9,19 @@ namespace IA.Data.Repositories
     public class ChatIARepository : RepositoryBase<ChatIA>, IChatIARepository
     {
         ContextDb db = new ContextDb(null);
-        public async Task<List<BuscarChatIAResponse>> ObterChatPeloIdUsuario(int IdUsuario)
+        public async Task<BuscarChatIAResponse> ObterChatPeloIdUsuario(int IdUsuario)
         {
-            return await (from chat in db.ChatIA
-                          join msg in db.Mensagens on chat.Id equals msg.ChatIAId
-                          join usu in db.Usuario on chat.UsuarioId equals usu.Id
-                          where usu.Id == IdUsuario
-                          select new BuscarChatIAResponse()
-                          {
-                              Mensagens = new List<MensagensChatIAResponse>() 
-                              {   
-                                   new MensagensChatIAResponse()
-                                   {
-                                       Mensagem = msg.Mensagem,
-                                       Ordem = msg.Ordem,
-                                       TipoMensagem = msg.TipoMensagem,
-                                       DataCriacao = msg.DataCriacao
-                                   } 
-                              }
-                          }).ToListAsync();             
+            var chatIA = await db.ChatIA
+                .Include(x => x.Mensagens)
+                .Include(x => x.Usuario)
+                    .ThenInclude(x => x.InformacoesPessoais)
+                .Include(x => x.Usuario)
+                    .ThenInclude(x => x.InteligenciaArtificial).FirstOrDefaultAsync();
+
+
+            var teste = new BuscarChatIAResponse(chatIA);
+
+            return teste;
         }
     }
 }

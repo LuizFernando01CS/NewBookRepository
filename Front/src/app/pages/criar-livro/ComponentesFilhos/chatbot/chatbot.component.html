@@ -1,0 +1,48 @@
+<div class="chatbot">
+ 
+    <div class="messages" #scrollMe [scrollTop]="scrollMe.scrollHeight"  [ngStyle]="{'padding-bottom':loadingChatIA? '0px' : '10px'}">
+      <ngx-skeleton-loader count="1" appearance="line" *ngIf="loadingChatIA"></ngx-skeleton-loader>
+
+      <ng-template ngFor let-message [ngForOf]="messages" let-i="index">      
+        <div  *ngIf="message.userName == userName" class="message-line me">
+          <div class="message me">
+            <div class="user-name me">
+              {{message.userName}}
+            </div>
+            <div>
+              {{message.message}}
+            </div>
+          </div>
+        </div>
+
+        <div  *ngIf="message.userName != userName"  class="message-line bot">
+        
+          <div class="message bot">
+            <div class="user-name bot">
+              {{message.userName}}
+            </div>
+            <div>
+              {{message.message}}
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <div class="loading-message" *ngIf="loadingIA">   
+        <app-loading></app-loading>
+      </div>
+    </div>
+    <div class="footer" [ngStyle]="{'background-color':loadingIA? '#cfcfcf' : 'white'}">
+      <form class="form" #form="ngForm" (ngSubmit)="sendMessage(form)">
+        <div class="btns-chat">
+          <i class="fa-solid fa-microphone" style="height: 25px;"></i>
+        </div>
+          <input [(ngModel)]="this.mensagemRequest" ngModel name="message" [disabled]="loadingIA" placeholder="Mensagem"/>
+        <div class="btns-chat" (click)="EditChatIA()" style="margin-left: 10px;">
+          <i class="fa-solid fa-pen-to-square"></i>
+     
+        </div>
+
+      </form>
+
+    </div>
+  </div>

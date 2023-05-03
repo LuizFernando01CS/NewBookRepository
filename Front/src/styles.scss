@@ -1,4 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr';
+// @import 'ngx-toastr/toastr-bs4-alert';
+// @import 'bootstrap/scss/functions';
+// @import 'bootstrap/scss/variables';
+// @import 'bootstrap/scss/mixins';
+// @import 'ngx-toastr/toastr-bs4-alert';
+// @import 'ngx-toastr/toastr-bs5-alert';
 
 :root {
     --color-light: white;
@@ -25,8 +31,28 @@
     --labelSize: 15px;
   }
 
-body{
-    margin: 0px;
+html{
+    padding: 0px !important;
+
+    body{
+      margin: 0px;
+      width: 100%;
+      height: 961px;
+
+      .contents{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+    }
+  }
+}
+
+
+ngx-skeleton-loader > .skeleton-loader{
+  background: rgb(224 226 233) no-repeat !important;
+  display: block !important; 
+  margin-bottom: 0px !important;
+  height: 100% !important;
 }
 
 .cdk-overlay-container {

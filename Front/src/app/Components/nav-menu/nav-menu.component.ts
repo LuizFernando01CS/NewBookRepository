@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ScriptService } from '../../../Services/script.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,11 +8,11 @@ import { Router } from '@angular/router';
 })
 export class NavMenuComponent {
 
-  constructor(private scriptService: ScriptService, private router: Router) {
+  constructor(private router: Router) {
 
   }
   ngOnInit() {
-     this.scriptService.ativarSideBar()
+     
   }
 
   RotaInicio(){
@@ -21,6 +20,6 @@ export class NavMenuComponent {
   }
 
   RotameusLivroslivro(){
-    this.router.navigate(['/', 'meusLivros']);
+    this.router.navigate(['/', 'livraria']);
   }
 }

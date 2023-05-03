@@ -1,0 +1,85 @@
+.content{
+
+    height: 107%;
+    margin-left: 3%;
+    margin-right: 3%;
+    border: 1px solid #c9c9c9;
+    
+    form{
+
+        .edits{
+
+            padding-top: 40px;
+            height: 635px;     
+            .colors-picker{
+
+                display: flex;
+                place-content: center;
+                height: 45px;
+                border-bottom: 1px solid #c9c9c9;
+
+                .color-set{
+                    display: flex;
+                    margin-right: 10px;
+        
+                    span{
+                        margin-right: 5px;
+                    }
+
+                    .edit-color{
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 25px;
+                        border: 1px solid black;
+                    }
+
+                    .edit-color:hover{
+                        cursor: pointer;
+                    }
+                }
+        
+            }
+
+            .loading-save{
+                width: 100%;
+                top: 40%;
+                height: 100px;
+                position: relative;
+            }
+        }
+
+    
+        .btns{
+
+            display: flex;
+
+            .btn-sign{
+                &:hover{
+                  background-color: #e3dd92;
+                }
+        
+                display: flex;
+                -webkit-box-pack: center;
+                justify-content: center;
+                width: 30%;
+                -webkit-box-align: center;
+                align-items: center;
+                text-align: center;   
+                background-color: #faf5b2;
+                font-family: Inter, sans-serif;
+                font-size: 1rem;
+                font-weight: 600;
+                line-height: 1.25;
+                padding: 0px 30px;
+                border: 0px;
+                border-radius: 4px;
+                transition: all 0.2s ease-in-out 0s;
+                cursor: pointer;
+                position: relative;
+                min-height: 40px;
+                border-radius: 7px;
+                margin-bottom: 20px;
+              }
+        }
+    }
+}

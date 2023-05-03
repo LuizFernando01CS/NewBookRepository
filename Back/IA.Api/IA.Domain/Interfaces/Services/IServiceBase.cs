@@ -2,14 +2,19 @@
 {
     public interface IServiceBase<T> where T : class
     {
-        T GetById(Guid id);
+        T GetById(int id);
+
+        Task<T> GetByIdAsync(int id);
+
         IEnumerable<T> GetAll();
 
         void Delete(T entity);
 
         void Update(T entity);
 
-        string Add(T entity);
+        Task UpdateAsync(T entity);
+
+        int Add(T entity);
 
         bool AddRange(List<T> entity);
 
@@ -19,7 +24,7 @@
 
         void Dispose();
 
-        Task<string> AddAsync(T entity);
+        Task<int> AddAsync(T entity);
 
         Task<bool> AddRangeAsync(List<T> entity);
     }

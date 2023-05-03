@@ -136,9 +136,18 @@ namespace NewBook.Data.Repositories
             return await db.Set<T>().ToListAsync();
         }
 
-        public T GetById(Guid id)
+        public T GetById(int id)
         {
             var find = db.Set<T>().Find(id);
+
+            db.Entry(find).State = EntityState.Detached;
+
+            return find;
+        }
+
+        public async Task<T> GetByIdAsync (int id)
+        {
+            var find = await db.Set<T>().FindAsync(id);
 
             db.Entry(find).State = EntityState.Detached;
 

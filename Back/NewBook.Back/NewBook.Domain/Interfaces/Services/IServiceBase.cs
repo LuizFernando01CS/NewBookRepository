@@ -4,7 +4,8 @@ namespace NewBook.Domain.Interfaces.Services
 {
     public interface IServiceBase<T> where T : class
     {
-        T GetById(Guid id);
+        T GetById(int id);
+        Task<T> GetByIdAsync(int id);
         IEnumerable<T> GetAll();
 
         void Delete(T entity);

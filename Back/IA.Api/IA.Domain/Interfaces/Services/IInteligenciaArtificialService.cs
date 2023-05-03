@@ -5,7 +5,8 @@ namespace IA.Domain.Interfaces.Services
 {
     public interface IInteligenciaArtificialService : IServiceBase<InteligenciaArtificial>
     {
-        //Task<string> ObterRespostaInterna(CompreenderMensagemRequest request);
-        Task<string> CompreenderMensagemRequest(BuscarMensagemRequest request);
+        Task<InteligenciaArtificial> ObterPeloUsuarioId(int usuarioId);
+        Task CriarIA(int usuarioId);
+        Task<bool> SalvarEdicaoChatIA(EditarChatIARequest request);
     }
 }

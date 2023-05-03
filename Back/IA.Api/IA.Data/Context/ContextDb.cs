@@ -19,6 +19,8 @@ namespace IA.Data.Context
         public DbSet<MensagensNaoEntendidas> MensagensNaoEntendidas { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<ChaveValor> ChaveValor { get; set; }
+        public DbSet<InteligenciaArtificial> InteligenciaArtificial { get; set; }
+        public DbSet<Permissao> Permissao { get; set; }
 
         public ContextDb(DbContextOptions<ContextDb> option) : base(option = new DbContextOptions<ContextDb>())
         {
@@ -46,6 +48,8 @@ namespace IA.Data.Context
             modelBuilder.ApplyConfiguration(new Usuario_config());
             modelBuilder.ApplyConfiguration(new Livro_config());
             modelBuilder.ApplyConfiguration(new ChaveValor_config());
+            modelBuilder.ApplyConfiguration(new InteligenciaArtificial_config());
+            modelBuilder.ApplyConfiguration(new Permissao_config());
         }
     }
 }

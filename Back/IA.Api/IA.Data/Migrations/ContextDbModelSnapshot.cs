@@ -166,14 +166,8 @@ namespace IA.Data.Migrations
                     b.Property<DateTime>("DataCriacao")
                         .HasColumnType("datetime");
 
-                    b.Property<int?>("EnderecoId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("Idade")
                         .HasColumnType("datetime");
-
-                    b.Property<int?>("InformacoesAdicionaisId")
-                        .HasColumnType("int");
 
                     b.Property<string>("NomeAbreviado")
                         .HasColumnType("varchar(50)");
@@ -192,11 +186,53 @@ namespace IA.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EnderecoId");
-
-                    b.HasIndex("InformacoesAdicionaisId");
-
                     b.ToTable("InformacoesPessoais");
+                });
+
+            modelBuilder.Entity("IA.Domain.Entities.InteligenciaArtificial", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("CorChatIA")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("CorMensagemIA")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("CorMensagemUsuario")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<DateTime>("DataAtualizacao")
+                        .HasColumnType("datetime");
+
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("datetime");
+
+                    b.Property<ulong>("Estilizado")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("NomeIA")
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<ulong>("PeloSite")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("TipoEstilizado")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TipoVoz")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("InteligenciaArtificial");
                 });
 
             modelBuilder.Entity("IA.Domain.Entities.Livro", b =>
@@ -282,10 +318,13 @@ namespace IA.Data.Migrations
                     b.Property<DateTime>("DataCriacao")
                         .HasColumnType("datetime");
 
+                    b.Property<int>("Index")
+                        .HasColumnType("int");
+
                     b.Property<string>("Mensagem")
                         .HasColumnType("varchar(1000)");
 
-                    b.Property<int>("Ordem")
+                    b.Property<int>("OrigemMensagem")
                         .HasColumnType("int");
 
                     b.Property<ulong>("PeloSite")
@@ -332,6 +371,37 @@ namespace IA.Data.Migrations
                     b.ToTable("MensagensNaoEntendidas");
                 });
 
+            modelBuilder.Entity("IA.Domain.Entities.Permissao", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DataAtualizacao")
+                        .HasColumnType("datetime");
+
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("datetime");
+
+                    b.Property<ulong>("PeloSite")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("PermissaoFone")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PermissaoMicrofone")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("Permissao");
+                });
+
             modelBuilder.Entity("IA.Domain.Entities.Usuario", b =>
                 {
                     b.Property<int>("Id")
@@ -351,11 +421,16 @@ namespace IA.Data.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(50)");
 
-                    b.Property<string>("FirebaseId")
-                        .HasColumnType("varchar(50)");
+                    b.Property<int?>("EnderecoId")
+                        .IsRequired()
+                        .HasColumnType("int");
 
                     b.Property<string>("Imagem")
                         .HasColumnType("varchar(1000)");
+
+                    b.Property<int?>("InformacoesAdicionaisId")
+                        .IsRequired()
+                        .HasColumnType("int");
 
                     b.Property<int?>("InformacoesPessoaisID")
                         .HasColumnType("int");
@@ -367,20 +442,24 @@ namespace IA.Data.Migrations
                     b.Property<string>("MetodoAcesso")
                         .HasColumnType("varchar(50)");
 
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("varchar(50)");
-
                     b.Property<ulong>("PeloSite")
                         .HasColumnType("bit");
 
                     b.Property<string>("ProvedorId")
                         .HasColumnType("varchar(50)");
 
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasColumnType("varchar(500)");
+
                     b.Property<DateTime>("UltimoAcesso")
                         .HasColumnType("datetime");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("EnderecoId");
+
+                    b.HasIndex("InformacoesAdicionaisId");
 
                     b.HasIndex("InformacoesPessoaisID");
 
@@ -398,23 +477,15 @@ namespace IA.Data.Migrations
                     b.Navigation("Usuario");
                 });
 
-            modelBuilder.Entity("IA.Domain.Entities.InformacoesPessoais", b =>
+            modelBuilder.Entity("IA.Domain.Entities.InteligenciaArtificial", b =>
                 {
-                    b.HasOne("IA.Domain.Entities.Endereco", "Endereco")
-                        .WithMany("InformacoesPessoais")
-                        .HasForeignKey("EnderecoId")
+                    b.HasOne("IA.Domain.Entities.Usuario", "Usuario")
+                        .WithMany("InteligenciaArtificial")
+                        .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("IA.Domain.Entities.InformacoesAdicionais", "InformacoesAdicionais")
-                        .WithMany("InformacoesPessoais")
-                        .HasForeignKey("InformacoesAdicionaisId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Endereco");
-
-                    b.Navigation("InformacoesAdicionais");
+                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("IA.Domain.Entities.Mensagens", b =>
@@ -439,13 +510,40 @@ namespace IA.Data.Migrations
                     b.Navigation("Mensagens");
                 });
 
+            modelBuilder.Entity("IA.Domain.Entities.Permissao", b =>
+                {
+                    b.HasOne("IA.Domain.Entities.Usuario", "Usuario")
+                        .WithMany("Permissao")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
+                });
+
             modelBuilder.Entity("IA.Domain.Entities.Usuario", b =>
                 {
+                    b.HasOne("IA.Domain.Entities.Endereco", "Endereco")
+                        .WithMany("Usuario")
+                        .HasForeignKey("EnderecoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("IA.Domain.Entities.InformacoesAdicionais", "InformacoesAdicionais")
+                        .WithMany("Usuario")
+                        .HasForeignKey("InformacoesAdicionaisId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("IA.Domain.Entities.InformacoesPessoais", "InformacoesPessoais")
                         .WithMany("Usuario")
                         .HasForeignKey("InformacoesPessoaisID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Endereco");
+
+                    b.Navigation("InformacoesAdicionais");
 
                     b.Navigation("InformacoesPessoais");
                 });
@@ -457,12 +555,12 @@ namespace IA.Data.Migrations
 
             modelBuilder.Entity("IA.Domain.Entities.Endereco", b =>
                 {
-                    b.Navigation("InformacoesPessoais");
+                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("IA.Domain.Entities.InformacoesAdicionais", b =>
                 {
-                    b.Navigation("InformacoesPessoais");
+                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("IA.Domain.Entities.InformacoesPessoais", b =>
@@ -478,6 +576,10 @@ namespace IA.Data.Migrations
             modelBuilder.Entity("IA.Domain.Entities.Usuario", b =>
                 {
                     b.Navigation("ChatIA");
+
+                    b.Navigation("InteligenciaArtificial");
+
+                    b.Navigation("Permissao");
                 });
 #pragma warning restore 612, 618
         }

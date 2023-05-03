@@ -1,13 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 
 using Microsoft.AspNetCore.Mvc;
-using NewBook.Api.Model;
 using NewBook.Application.Interface.Application;
 using NewBook.Domain.Entities;
-using NewBook.Domain.Enums;
 using NewBook.Domain.Models;
-using NewBook.Domain.Request;
-using NewBook.Domain.Response;
 
 namespace NewBook.Api.Controllers
 {
@@ -23,34 +19,17 @@ namespace NewBook.Api.Controllers
 
         }
 
-
-        [HttpGet("teste")]
-        public void teste([FromQuery] FrequenciaEscritaEnum teste)
-        {
-            
-        }
-
-        public class testes
-        {
-            public string name { get; set; }
-            public string[] array { get; set; }
-        }
-        public class array
-        {
-            public string name { get; set; }
-        }
-
-        [Authorize]
         [HttpGet("GetAll")]
+        [Authorize]
         public List<Usuario> GetAll()
         {
             try
             {
                 return _usuarioApplication.GetAll().ToList();
             }
-           catch(Exception ex)
+            catch (Exception ex)
             {
-                throw new Exception("Erro na aplicação, erro técnico:" + ex.Message);
+                throw new Exception($"Erro na aplicação, erro técnico: {ex.Message}");
             }
         }
 
@@ -63,7 +42,7 @@ namespace NewBook.Api.Controllers
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro na aplicação, erro técnico:" + ex.Message);
+                throw new Exception($"Erro na aplicação, erro técnico: {ex.Message}");
             }
         }
     }

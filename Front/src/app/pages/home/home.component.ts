@@ -66,7 +66,6 @@ export class HomeComponent implements OnInit {
 
     this.livroService.getAll()
     .subscribe((data: any) => {
-        console.log("VEEER DATA", data);
     });
   }
 

@@ -13,11 +13,6 @@ namespace NewBook.Application.Application
             _usuarioService = usuarioService;
         }
 
-        public async Task<Usuario> ObterPeloIdFireBase(string idFirebase)
-        {
-            return await _usuarioService.ObterPeloIdFireBase(idFirebase);
-        }
-
         public async Task<Usuario> ObterPeloEmail(string email)
         {
             return await _usuarioService.ObterPeloEmail(email);

@@ -12,10 +12,11 @@ export class Variaveisglobais {
   // E = Espelho 
 
   ambiente = "L";
+  active = false;
 
 
-  apiUrl = ""; 
-  apiIAUrl = "";
+  apiUrl = "https://localhost:7067/"; 
+  apiIAUrl = "https://localhost:7040/";
 
   apiUrlLocal = "https://localhost:7067/";
   apiIAUrlLocal = "https://localhost:7293/";

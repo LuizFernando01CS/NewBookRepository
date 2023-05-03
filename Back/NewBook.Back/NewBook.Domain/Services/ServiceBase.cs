@@ -45,11 +45,15 @@ namespace NewBook.Domain.Services
             return _irepositoryBase.GetAll();
         }
 
-        public T GetById(Guid id)
+        public T GetById(int id)
         {
             return _irepositoryBase.GetById(id);
         }
 
+        public Task<T> GetByIdAsync(int id)
+        {
+            return _irepositoryBase.GetByIdAsync(id);
+        }
         public void Update(T entity)
         {
             _irepositoryBase.Update(entity);

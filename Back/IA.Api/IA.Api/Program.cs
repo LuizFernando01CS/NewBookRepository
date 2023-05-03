@@ -9,6 +9,11 @@ using IA.Data.Repositories;
 using System.Reflection;
 using IA.Data.Context;
 using Microsoft.EntityFrameworkCore;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using IA.Api.Models;
+using IA.Domain.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,11 +28,34 @@ builder.Services.AddSwaggerGen();
 
 IConfiguration configuration = builder.Configuration;
 
+var mappingConfig = configurarMapper();
+
+IMapper mapper = mappingConfig.CreateMapper();
+builder.Services.AddSingleton(mapper);
+
+var key = Encoding.ASCII.GetBytes(configuration.GetSection("KeyApiAuth").Value);
+
+builder.Services.AddAuthentication(x =>
+{
+    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(x =>
+{
+    x.RequireHttpsMetadata = false;
+    x.SaveToken = true;
+    x.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ValidateIssuer = false,
+        ValidateAudience = false
+    };
+});
+
 Container container = new Container();
 container.Options.DefaultLifestyle = Lifestyle.Scoped;
 container.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
 
-builder.Services.AddMvc();
 builder.Services.AddHealthChecks();
 
 DependencyInjection();
@@ -45,6 +73,7 @@ var app = builder.Build();
 //app cors
 app.UseCors("corsapp");
 app.UseHttpsRedirection();
+app.UseAuthentication();
 app.UseAuthorization();
 
 // Configure the HTTP request pipeline.
@@ -53,10 +82,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
 
 app.MapControllers();
 
@@ -70,13 +95,18 @@ using (var scope = app.Services.CreateScope())
 
 app.Run();
 
-void configurarMapper()
+MapperConfiguration configurarMapper()
 {
     configurationMapper = new MapperConfiguration(mapper =>
     {
-        //mapper.CreateMap<EntityBase, EntityBaseModel>();
-        //mapper.CreateMap<Livro, LivroModel>();
+        mapper.CreateMap<EntityBase, EntityBaseModel>();
+        mapper.CreateMap<InteligenciaArtificialModel, InteligenciaArtificial>();
+
+        mapper.CreateMap<EntityBaseModel, EntityBase>();
+        mapper.CreateMap<InteligenciaArtificial, InteligenciaArtificialModel>();
     });
+
+    return configurationMapper;
 }
 
 void DependencyInjection()
@@ -87,8 +117,12 @@ void DependencyInjection()
     builder.Services.AddScoped(typeof(IServiceBase<>), typeof(ServiceBase<>));
     builder.Services.AddScoped<IInteligenciaArtificialService, InteligenciaArtificialService>();
     builder.Services.AddScoped<IMensagensService, MensagensService>();
+    builder.Services.AddScoped<IChatIAService, ChatIAService>();
+    builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 
     builder.Services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
     builder.Services.AddScoped<IInteligenciaArtificialRepository, InteligenciaArtificialRepository>();
     builder.Services.AddScoped<IMensagensRepository, MensagensRepository>();
+    builder.Services.AddScoped<IChatIARepository, ChatIARepository>();
+    builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 }

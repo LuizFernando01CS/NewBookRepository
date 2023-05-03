@@ -7,7 +7,8 @@ namespace NewBook.Domain.Interfaces.Repositories
         int Add(T entity);
         bool AddRange(List<T> entity);
         bool UpdateRange(List<T> entity);
-        T GetById(Guid id);
+        T GetById(int id);
+        Task<T> GetByIdAsync(int id);
         IEnumerable<T> GetAll();
         void Update(T entity);
         Task UpdateAsync(T entity);

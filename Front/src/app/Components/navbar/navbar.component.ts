@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { ScriptService } from '../../../Services/script.service';
-import { LoginComponent } from './Component/login/login.component';
-// import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -11,33 +8,26 @@ import { LoginComponent } from './Component/login/login.component';
 })
 export class NavbarComponent {
   logado: boolean = false;
-  element: any;
-  modal: any;
+  nomeCompleto: any;
+  imagem: any;
+
   constructor(
-    private scriptService: ScriptService, 
-     private matDialog: MatDialog) {
+     private router: Router) {
   }
 
   ngOnInit() {
-    this.scriptService.ativarNavBar();
-
-    var logadoStorage = localStorage.getItem("logado");
-
- 
-
-    // this.logado = logadoStorage != undefined && logadoStorage != null && logadoStorage != "" ? Boolean(logadoStorage) : false;
+    if(localStorage.getItem("logado") == "true"){
+      this.imagem = localStorage.getItem("imagem") ?? "";
+      this.nomeCompleto = localStorage.getItem("userName") ?? "";
+      this.logado = true; 
+    }
  }
 
- Perfil(){
-  
-    if(this.logado){
-      //tela perfil
-    }
-    else{
-      const dialogModal = this.matDialog.open(LoginComponent, {width: '500px'});
-      dialogModal.backdropClick().subscribe(result => {
-        dialogModal.close();
-      });
-    }
+
+ Perfil(){ 
+    if(this.logado)
+      this.router.navigate(['/', 'perfil']);
+    else
+      this.router.navigate(['/', 'login']);
  }
 }

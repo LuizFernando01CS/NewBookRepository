@@ -10,6 +10,6 @@
         public int NumeroCasa { get; set; }
         public string Complemento { get; set; }
 
-        public List<InformacoesPessoais> InformacoesPessoais { get; set; }
+        public List<Usuario> Usuario { get; set; }
     }
 }

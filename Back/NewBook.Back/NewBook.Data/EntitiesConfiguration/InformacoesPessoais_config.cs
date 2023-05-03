@@ -23,14 +23,8 @@ namespace NewBook.Data.EntitiesConfiguration
             builder.Property(p => p.NumeroTelefone1).IsRequired(true).HasColumnType("int");
             builder.Property(p => p.NumeroTelefone2).IsRequired(true).HasColumnType("int");
             builder.Property(p => p.Idade).IsRequired(true).HasColumnType("datetime");
-            builder.Property(p => p.InformacoesAdicionaisId).IsRequired(true).HasColumnType("int");
-            builder.Property(p => p.EnderecoId).IsRequired(true).HasColumnType("int");
 
             //relationship
-            builder.HasOne(x => x.InformacoesAdicionais).WithMany(x => x.InformacoesPessoais).HasForeignKey(x => x.InformacoesAdicionaisId).OnDelete((DeleteBehavior)3);
-            builder.HasOne(x => x.Endereco).WithMany(x => x.InformacoesPessoais).HasForeignKey(x => x.EnderecoId).OnDelete((DeleteBehavior)3);
-            builder.HasIndex(x => x.InformacoesAdicionaisId).IsUnique(false);
-            builder.HasIndex(x => x.EnderecoId).IsUnique(false);
         }
     }
 }

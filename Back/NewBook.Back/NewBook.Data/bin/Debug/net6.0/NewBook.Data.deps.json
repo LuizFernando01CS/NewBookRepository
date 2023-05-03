@@ -22,17 +22,6 @@
           "NewBook.Data.dll": {}
         }
       },
-      "FirebaseAuthentication.net/4.0.2": {
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.2"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Firebase.Auth.dll": {
-            "assemblyVersion": "4.0.2.0",
-            "fileVersion": "4.0.2.0"
-          }
-        }
-      },
       "Humanizer.Core/2.14.1": {
         "runtime": {
           "lib/net6.0/Humanizer.dll": {
@@ -240,11 +229,11 @@
           }
         }
       },
-      "Newtonsoft.Json/13.0.2": {
+      "Newtonsoft.Json/13.0.1": {
         "runtime": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "13.0.0.0",
-            "fileVersion": "13.0.2.27524"
+            "fileVersion": "13.0.1.25517"
           }
         }
       },
@@ -302,7 +291,7 @@
       },
       "NewBook.Domain/1.0.0": {
         "dependencies": {
-          "FirebaseAuthentication.net": "4.0.2"
+          "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
           "NewBook.Domain.dll": {}
@@ -315,13 +304,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "FirebaseAuthentication.net/4.0.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-805UhOsDsmDPbESOKrT1x31Dx9qLqvt6pEwRyKRVmBAcJxLWFnyoJ7Vzj/TesuzIv0fAXpbnRfzK4LotG+Rksg==",
-      "path": "firebaseauthentication.net/4.0.2",
-      "hashPath": "firebaseauthentication.net.4.0.2.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",
@@ -463,12 +445,12 @@
       "path": "mysqlconnector/2.2.5",
       "hashPath": "mysqlconnector.2.2.5.nupkg.sha512"
     },
-    "Newtonsoft.Json/13.0.2": {
+    "Newtonsoft.Json/13.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-R2pZ3B0UjeyHShm9vG+Tu0EBb2lC8b0dFzV9gVn50ofHXh9Smjk6kTn7A/FdAsC8B5cKib1OnGYOXxRBz5XQDg==",
-      "path": "newtonsoft.json/13.0.2",
-      "hashPath": "newtonsoft.json.13.0.2.nupkg.sha512"
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
     },
     "Pomelo.EntityFrameworkCore.MySql/7.0.0": {
       "type": "package",

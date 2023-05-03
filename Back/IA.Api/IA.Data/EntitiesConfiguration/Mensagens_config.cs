@@ -18,7 +18,8 @@ namespace IA.Data.EntitiesConfiguration
             //table
             builder.Property(p => p.Mensagem).IsRequired(false).HasColumnType("varchar(1000)");
             builder.Property(p => p.TipoMensagem).IsRequired(true).HasColumnType("int");
-            builder.Property(p => p.Ordem).IsRequired(true).HasColumnType("int");
+            builder.Property(p => p.OrigemMensagem).IsRequired(true).HasColumnType("int");
+            builder.Property(p => p.Index).IsRequired(true).HasColumnType("int");
             builder.Property(p => p.ChatIAId).IsRequired(false).HasColumnType("int");
 
             //relationship
